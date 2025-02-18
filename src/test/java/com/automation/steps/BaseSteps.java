@@ -4,10 +4,12 @@ import com.automation.interfaces.FlightListingPage;
 import com.automation.interfaces.FlightSearchPage;
 import com.automation.interfaces.HomePage;
 import com.automation.interfaces.SignInPage;
-import com.automation.pages.WebFlightListingPage;
-import com.automation.pages.WebFlightSearchPage;
-import com.automation.pages.WebHomePage;
-import com.automation.pages.WebSignInPage;
+
+import com.automation.pages.web.WebFlightListingPage;
+import com.automation.pages.web.WebFlightSearchPage;
+import com.automation.pages.web.WebHomePage;
+import com.automation.pages.web.WebSignInPage;
+
 
 public class BaseSteps {
     HomePage homePage;
