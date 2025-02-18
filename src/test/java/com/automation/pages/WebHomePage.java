@@ -16,9 +16,8 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(xpath = "//span[contains(text(),\"Flights\")]")
     WebElement flightsOption;
 
-    @FindBy(id = "account_circle-title")
+    @FindBy(xpath = "//div[contains(@data-testid,\"memberprofile-mediumview\")]")
     WebElement accountElement;
-    //(//button[contains(@data-testid,"header-menu-button")])[2]
 
     @FindBy(xpath = "//div[text()=\"Sign out\"]")
     WebElement signOutButton;
@@ -45,11 +44,15 @@ public class WebHomePage extends WebBasePage implements HomePage {
     }
 
     public boolean isAccountElementDisplayed(){
-        pause(2000);
+        pause(5000);
         return accountElement.isDisplayed();
     }
 
     public boolean isSignInElementDisplayed(){
         return signInElement.isDisplayed();
+    }
+
+    public void clickOnFlightsOption(){
+        flightsOption.click();
     }
 }

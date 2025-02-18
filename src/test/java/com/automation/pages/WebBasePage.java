@@ -13,6 +13,8 @@ import java.text.SimpleDateFormat;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Set;
+
 import static java.lang.Thread.sleep;
 import static java.time.Duration.ofSeconds;
 import static org.apache.commons.io.FileUtils.copyFile;
@@ -75,7 +77,18 @@ public class WebBasePage {
         driver.manage().timeouts().implicitlyWait(ofSeconds(sec));
     }
 
-
+    public void switchToNewWindow(){
+        String currentWindow = driver.getWindowHandle();
+        Set<String> allWindow = driver.getWindowHandles();
+        for(String window : allWindow){
+            if(!window.equals(currentWindow)){
+                driver.switchTo().window(window);
+            }
+        }
+    }
+    public void switchToCurrentWindow(){
+       // String current
+    }
     public void takeScreenshot() throws IOException {
         File src = ((TakesScreenshot) driver).getScreenshotAs(FILE);
         copyFile(src, new File("src/test/resources/screenshots/Screen.png"));

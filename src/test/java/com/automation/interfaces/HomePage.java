@@ -16,4 +16,6 @@ public interface HomePage {
     boolean isAccountElementDisplayed();
 
     boolean isSignInElementDisplayed();
+
+    void clickOnFlightsOption();
 }
