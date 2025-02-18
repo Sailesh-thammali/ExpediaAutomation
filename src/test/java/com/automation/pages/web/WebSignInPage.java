@@ -1,4 +1,4 @@
-package com.automation.pages;
+package com.automation.pages.web;
 
 import com.automation.interfaces.SignInPage;
 import org.openqa.selenium.WebElement;
