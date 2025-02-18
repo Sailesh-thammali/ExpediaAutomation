@@ -92,8 +92,10 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage
         return signIn.isDisplayed();
     }
 
+    @Override
+    public void clickOnFlightsOption() {
 
-
+    }
 
 
 }

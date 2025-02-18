@@ -11,11 +11,12 @@ public interface HomePage {
 
     void clickOnAccountElement();
 
-     void clickOnSignOutButton() ;
+    void clickOnSignOutButton();
 
+    boolean isAccountElementDisplayed();
 
+    boolean isSignInElementDisplayed();
 
-     boolean isAccountElementDisplayed() ;
+    void clickOnFlightsOption();
 
-     boolean isSignInElementDisplayed() ;
 }

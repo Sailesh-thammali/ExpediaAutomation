@@ -40,4 +40,10 @@ public class HomeSteps extends BaseSteps{
        Assert.assertTrue(homePage.isSignInElementDisplayed());
     }
 
+    @When("user clicks on flights option")
+    public void userClicksOnFlightsOption() {
+        homePage.clickOnFlightsOption();
+    }
+
+
 }
