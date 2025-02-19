@@ -1,7 +1,6 @@
 Feature: Validate Flight Booking Functionality
   Scenario: Verify user can book flights
     Given user open application
-    #{include rejectall btn, close sign in ,dont allow notification,location skip}
     Then verify user is on home page
     When user clicks on flights option
     Then verify user is on flight search page

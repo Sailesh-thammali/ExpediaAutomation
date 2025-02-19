@@ -87,7 +87,8 @@ public class WebBasePage {
         }
     }
     public void switchToCurrentWindow(){
-       // String current
+        String currentWindow=driver.getWindowHandle();
+        driver.switchTo().window(currentWindow);
     }
     public void takeScreenshot() throws IOException {
         File src = ((TakesScreenshot) driver).getScreenshotAs(FILE);

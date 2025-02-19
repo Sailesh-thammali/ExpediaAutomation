@@ -26,7 +26,7 @@ public class WebFlightListingPage extends WebBasePage implements FlightListingPa
     }
 
     public boolean isFlightListingPageDisplayed(){
-        flightsList.getFirst().isDisplayed();
+        return flightsList.getFirst().isDisplayed();
     }
 
 
