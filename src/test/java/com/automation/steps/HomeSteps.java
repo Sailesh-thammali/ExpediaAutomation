@@ -46,4 +46,8 @@ public class HomeSteps extends BaseSteps{
     }
 
 
+    @When("user clicks on cars option")
+    public void userClicksOnCarsOption() {
+        homePage.clickOnCarsOption();
+    }
 }

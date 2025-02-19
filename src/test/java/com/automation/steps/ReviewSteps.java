@@ -15,5 +15,6 @@ public class ReviewSteps extends BaseSteps{
     public void printFlightDetailsAndPrice() {
         reviewPage.printFlightInformation();
         reviewPage.printPriceDetails();
+
     }
 }

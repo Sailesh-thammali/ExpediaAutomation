@@ -20,7 +20,7 @@ public class FlightSearchSteps extends BaseSteps{
 
 
     @And("enters {string},{string},{string} and {string}")
-    public void entersAnd(String arg0, String arg1, String arg2, String arg3) throws InterruptedException {
+    public void entersAnd(String arg0, String arg1, String arg2, String arg3)  {
         flightSearchPage.enterFromCity(ConfigReader.getConfigValue("flight.from.city"));
         flightSearchPage.enterToCity(ConfigReader.getConfigValue("flight.to.city"));
         flightSearchPage.enterDate(ConfigReader.getConfigValue("flight.date"));

@@ -90,9 +90,14 @@ public class WebBasePage {
         String currentWindow=driver.getWindowHandle();
         driver.switchTo().window(currentWindow);
     }
-    public void takeScreenshot() throws IOException {
+    public void takeScreenshot(String filename)  {
         File src = ((TakesScreenshot) driver).getScreenshotAs(FILE);
-        copyFile(src, new File("src/test/resources/screenshots/Screen.png"));
+        try {
+            copyFile(src, new File("src/test/resources/screenshots/"+filename+".png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
 }

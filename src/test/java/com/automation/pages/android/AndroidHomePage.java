@@ -42,4 +42,9 @@ public class AndroidHomePage implements HomePage {
     public void clickOnFlightsOption() {
 
     }
+
+    @Override
+    public void clickOnCarsOption() {
+
+    }
 }

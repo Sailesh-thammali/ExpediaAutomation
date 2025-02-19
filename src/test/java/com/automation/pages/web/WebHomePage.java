@@ -7,19 +7,22 @@ import org.openqa.selenium.support.FindBy;
 
 public class WebHomePage extends WebBasePage implements HomePage {
 
-    @FindBy(xpath = "//button[contains(text(),\"Sign in\")]")
+    @FindBy(xpath = "//button[contains(text(),'Sign in')]")
     WebElement signInElement;
 
-    @FindBy(xpath = "//a[contains(text(),\"Sign in\")]")
+    @FindBy(xpath = "//a[contains(text(),'Sign in')]")
     WebElement signInButton;
 
-    @FindBy(xpath = "//span[contains(text(),\"Flights\")]")
+    @FindBy(xpath = "//span[contains(text(),'Flights')]")
     WebElement flightsOption;
 
-    @FindBy(xpath = "//div[contains(@data-testid,\"memberprofile-mediumview\")]")
+    @FindBy(xpath = "//span[contains(text(),'Cars')]")
+    WebElement carsOption;
+
+    @FindBy(xpath = "//div[contains(@data-testid,'memberprofile-mediumview')]")
     WebElement accountElement;
 
-    @FindBy(xpath = "//div[text()=\"Sign out\"]")
+    @FindBy(xpath = "//div[text()='Sign out']")
     WebElement signOutButton;
 
 
@@ -54,5 +57,9 @@ public class WebHomePage extends WebBasePage implements HomePage {
 
     public void clickOnFlightsOption(){
         flightsOption.click();
+    }
+
+    public void clickOnCarsOption(){
+        carsOption.click();
     }
 }

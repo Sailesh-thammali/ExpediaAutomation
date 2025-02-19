@@ -13,13 +13,15 @@ public class BaseSteps {
     FlightSearchPage flightSearchPage;
     FlightListingPage flightListingPage;
     ReviewPage reviewPage;
+    CarSearchPage carSearchPage;
     public BaseSteps() {
         if(System.getProperty("platfrom","web").equals("web")) {
             homePage = new WebHomePage();
             signInPage = new WebSignInPage();
             flightSearchPage = new WebFlightSearchPage();
             flightListingPage = new WebFlightListingPage();
-            reviewPage = new WebReviewPage();
+            reviewPage = new WebFlightReviewPage();
+            carSearchPage=new WebCarSearchPage();
         }
         else {
             homePage=new AndroidHomePage();

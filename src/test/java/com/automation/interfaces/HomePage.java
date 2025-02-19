@@ -18,4 +18,6 @@ public interface HomePage {
     boolean isSignInElementDisplayed();
 
     void clickOnFlightsOption();
+
+    void clickOnCarsOption();
 }
