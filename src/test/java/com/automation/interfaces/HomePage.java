@@ -20,4 +20,5 @@ public interface HomePage {
     void clickOnFlightsOption();
 
     void clickOnCarsOption();
+
 }
