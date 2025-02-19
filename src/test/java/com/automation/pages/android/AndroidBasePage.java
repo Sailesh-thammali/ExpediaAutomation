@@ -20,7 +20,7 @@ public class AndroidBasePage {
         WebDriverWait wait;
 
         public AndroidBasePage() {
-            driver = (AppiumDriver) DriverManager.getDriver();
+            driver = (AppiumDriver)DriverManager.getDriver();
             initElements(driver, this);
             wait = new WebDriverWait(driver, ofSeconds(60));
         }

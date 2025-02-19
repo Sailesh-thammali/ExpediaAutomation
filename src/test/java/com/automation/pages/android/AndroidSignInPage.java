@@ -5,8 +5,7 @@ import com.automation.utils.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AndroidSignInPage extends AndroidBasePage implements SignInPage
-{
+public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
     @FindBy(xpath = "//android.widget.EditText/android.view.View")
     WebElement emailText;
 

@@ -43,7 +43,13 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @Override
     public void openApplication() {
+
         getStartedBtn.click();
+
+        if(isDisplayed(denyBtn))
+        {
+            denyBtn.click();
+        }
         cancelBtn.click();
         cancelBtn2.click();
         denyBtn.click();
@@ -93,6 +99,8 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @Override
     public void clickOnFlightsOption() {
+
+        flightIcon.click();
 
     }
 }

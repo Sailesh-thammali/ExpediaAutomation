@@ -16,7 +16,7 @@ public class DriverManager {
     static WebDriver driver;
 
     public static void createDriver() {
-        if (getProperty("platform", "web").equals("web")) {
+        if (getProperty("platform").equals("web")) {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
 
