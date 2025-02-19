@@ -4,8 +4,7 @@ import com.automation.interfaces.HomePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public  class AndroidHomePage extends AndroidBasePage implements HomePage
-{
+public  class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.Button")
     WebElement getStartedBtn;
 
@@ -63,7 +62,7 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage
 
     @Override
     public void clickOnAccountElement() {
-    accountIcon.click();
+        accountIcon.click();
     }
 
 
@@ -71,10 +70,10 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage
         int height = driver.manage().window().getSize().getHeight();
         int width = driver.manage().window().getSize().getWidth();
 
-        int startX = width/2;
-        int startY = (height*3)/4;
-        int endX = width/2;
-        int endY= height/4;
+        int startX = width / 2;
+        int startY = (height * 3) / 4;
+        int endX = width / 2;
+        int endY = height / 4;
         while (!isDisplayed(signOutBtn)) {
             scroll(startX, startY, endX, endY);
         }
@@ -96,6 +95,8 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage
     public void clickOnFlightsOption() {
 
     }
-
-
 }
+
+
+
+
