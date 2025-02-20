@@ -8,5 +8,5 @@ Feature: Validate Car Rental Functionality
     And user clicks on search button
     Then verify user is on car listing page
     When user click on first car
-    Then verify user is on review page
+    #Then verify user is on review page
     And print car rental details

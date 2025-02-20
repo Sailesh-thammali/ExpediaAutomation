@@ -50,11 +50,7 @@ public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
     @FindBy(id = "search_button")
     WebElement searchButton;
 
-    @FindBy(xpath = "//button[@data-auto-id='bookButton']")
-    WebElement carSelectButton;
 
-    @FindBy(xpath = "//div[@data-auto-id='pickUpLocationReadOnly']")
-    WebElement pickUpSummary;
 
 
     public void enterFromCity(String fromCity) {
@@ -74,8 +70,6 @@ public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
         while (!expMonthYear.equalsIgnoreCase(actMonthYear)) {
-            System.out.println(expMonthYear);
-            System.out.println(actMonthYear);
             nextButton.click();
             actMonthYear = monthAndYear.getText();
         }

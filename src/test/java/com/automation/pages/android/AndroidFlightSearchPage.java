@@ -71,8 +71,7 @@ public class AndroidFlightSearchPage extends AndroidBasePage implements FlightSe
     }
 
     @Override
-    public void enterDate(String date) throws InterruptedException {
-
+    public void enterDate(String date) {
         dateBtn.click();
         WebElement dateElement = driver.findElement(By.xpath(String.format(enterDate, date)));
         dateElement.click();

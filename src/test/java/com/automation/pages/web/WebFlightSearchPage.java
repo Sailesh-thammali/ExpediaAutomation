@@ -77,8 +77,6 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
         while (!expMonthYear.equalsIgnoreCase(actMonthYear)) {
-            System.out.println(expMonthYear);
-            System.out.println(actMonthYear);
             nextButton.click();
             actMonthYear = monthAndYear.getText();
         }
