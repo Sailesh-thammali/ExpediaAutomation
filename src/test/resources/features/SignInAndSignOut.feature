@@ -4,8 +4,7 @@ Feature: Validate Sign In And Sign Out Functionality
     Then verify user is on home page
     When user click on sign in button
     Then verify user is on sign in page
-    When user enter "user.email" and "user.password"
-    And click on continue
+    When user enter "user.email","user.password" and clicks on signIn
     Then verify user signed in successfully
     When user clicks on account icon
     Then verify user is on account page
