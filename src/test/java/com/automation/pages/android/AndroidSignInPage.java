@@ -27,6 +27,7 @@ public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
     WebElement cancelBtn;
 
 
+
     @Override
     public void enterCredentials(String email, String password) {
         cancelBtn.click();
@@ -43,7 +44,22 @@ public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
     }
 
     @Override
+    public void clickOnContinueButton() {
+
+    }
+
+    @Override
     public boolean isSignInPageDisplayed() {
         return cancelBtn.isDisplayed();
+    }
+
+    @Override
+    public void enterEmail(String email) {
+
+    }
+
+    @Override
+    public boolean isErrorMessageDisplayed() {
+        return false;
     }
 }

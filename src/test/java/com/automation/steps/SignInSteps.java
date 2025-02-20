@@ -22,4 +22,20 @@ public class SignInSteps extends BaseSteps{
     public void clickOnContinue() {
         signInPage.clickOnSignInButton();
     }
+
+    @When("user enter {string}")
+    public void userEnter(String email) {
+        signInPage.enterEmail(email);
+    }
+
+    @Then("verify error message is displayed {string}")
+    public void verifyErrorMessageIsDisplayed(String arg0) {
+       Assert.assertTrue(signInPage.isErrorMessageDisplayed());
+    }
+
+    @And("click on continue button")
+    public void clickOnContinueButton() {
+        signInPage.clickOnContinueButton();
+
+    }
 }

@@ -16,8 +16,10 @@ public class CarListingSteps extends BaseSteps {
         carListingPage.clickOnFirstCar();
     }
 
-    @And("print car rental details")
+    @Then("print car rental details")
     public void printCarRentalDetails() {
+        carListingPage.printLocationDetails();
         carListingPage.printCarDetails();
+
     }
 }
