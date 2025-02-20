@@ -9,4 +9,4 @@ Feature: Validate Car Rental Functionality
     Then verify user is on car listing page
     When user click on first car
     #Then verify user is on review page
-    And print car rental details
+    Then print car rental details

@@ -21,17 +21,36 @@ public class WebSignInPage extends WebBasePage implements SignInPage {
     @FindBy(id = "enterPasswordFormSubmitButton")
     WebElement signInButton;
 
-    public void enterCredentials(String email,String password){
+    @FindBy(xpath = "//div[contains(@class,'uitk-banner-critical')]")
+    WebElement errorMessage;
+
+    public void enterCredentials(String email, String password) {
         emailInput.sendKeys(email);
         continueButton.click();
         passwordButton.click();
         passwordInput.sendKeys(password);
 
     }
-    public void clickOnSignInButton(){
+
+    public void enterEmail(String email) {
+        emailInput.sendKeys(email);
+    }
+
+    public void clickOnContinueButton(){
+        continueButton.click();
+    }
+
+
+    public void clickOnSignInButton() {
         signInButton.click();
     }
-    public boolean isSignInPageDisplayed(){
+
+    public boolean isSignInPageDisplayed() {
         return emailInput.isDisplayed();
+    }
+
+    public boolean isErrorMessageDisplayed() {
+        System.out.println(errorMessage.getText());
+        return errorMessage.isDisplayed();
     }
 }

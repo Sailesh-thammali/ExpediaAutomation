@@ -17,11 +17,26 @@ public class WebCarListingPage extends WebBasePage implements CarListingPage {
     @FindBy(xpath = "//div[@data-auto-id='dropOffUpLocationReadOnly']")
     WebElement dropOffSummary;
 
+    @FindBy(className = "ct-prominent-size")
+    List<WebElement> vehicleDetails;
+
+    @FindBy(className = "ct-total-price")
+    WebElement vehiclePrice;
+
     public void clickOnFirstCar() {
         carSelectButton.getFirst().click();
     }
 
+    @Override
     public void printCarDetails() {
+        System.out.println("---------------");
+        System.out.println("Car Type:- " + vehicleDetails.getFirst().getText());
+        System.out.println("Car Name:- " + vehicleDetails.getLast().getText());
+        System.out.println("Car Fee:- " + vehiclePrice.getText());
+
+    }
+
+    public void printLocationDetails() {
         switchToNewWindow();
         String text = pickUpSummary.getText();
         String[] lines = text.split("\n");

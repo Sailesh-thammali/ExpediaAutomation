@@ -23,7 +23,7 @@ public class FlightSearchSteps extends BaseSteps{
     public void entersAnd(String arg0, String arg1, String arg2, String arg3)  {
         flightSearchPage.enterFromCity(ConfigReader.getConfigValue("flight.from.city"));
         flightSearchPage.enterToCity(ConfigReader.getConfigValue("flight.to.city"));
-        flightSearchPage.enterDate(ConfigReader.getConfigValue("flight.date"));
+        flightSearchPage.enterDate(ConfigReader.getConfigValue("date"));
         flightSearchPage.enterNoOfTravellers(ConfigReader.getConfigValue("flight.travellers"));
     }
 
