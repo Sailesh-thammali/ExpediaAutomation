@@ -26,6 +26,10 @@ public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
     @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"Cancel\"]")
     WebElement cancelBtn;
 
+    @FindBy(xpath = "//android.widget.TextView[@content-desc=\"System error\"]")
+    WebElement errorMsg;
+
+
 
 
     @Override
@@ -45,6 +49,7 @@ public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
 
     @Override
     public void clickOnContinueButton() {
+        continueButton.click();
 
     }
 
@@ -55,11 +60,13 @@ public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
 
     @Override
     public void enterEmail(String email) {
-
+        cancelBtn.click();
+        emailText.click();
+        emailInput.sendKeys(email);
     }
 
     @Override
     public boolean isErrorMessageDisplayed() {
-        return false;
+        return errorMsg.isDisplayed();
     }
 }

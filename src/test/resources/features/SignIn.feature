@@ -20,7 +20,7 @@ Feature: Validate on sign in functionality with valid and invalid credentials
       | saileshcse0@gmail.com |
       | sailesh*@gmail.com    |
       | exex@gmail.com        |
-      | Vrbooi@gmail.com      |
+
 
   Scenario Outline: Unsuccessful sign in with invalid password
     When user enter "user.email" and "<invalid.password>"
