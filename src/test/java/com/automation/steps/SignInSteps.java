@@ -1,5 +1,7 @@
 package com.automation.steps;
 
+import com.automation.pages.web.WebBasePage;
+import com.automation.pages.web.WebSignInPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -12,15 +14,10 @@ public class SignInSteps extends BaseSteps{
         Assert.assertTrue(signInPage.isSignInPageDisplayed());
     }
 
-    @When("user enter {string} and {string}")
-    public void userEnterAnd(String email, String password) {
+    @When("user enter {string},{string} and clicks on signIn")
+    public void userEnterAndClicksOnSignIn(String arg0, String arg1){
         signInPage.enterCredentials(ConfigReader.getConfigValue("signIn.email"),ConfigReader.getConfigValue("signIn.password"));
 
-    }
-
-    @And("click on continue")
-    public void clickOnContinue() {
-        signInPage.clickOnSignInButton();
     }
 
     @When("user enter {string}")
@@ -38,4 +35,12 @@ public class SignInSteps extends BaseSteps{
         signInPage.clickOnContinueButton();
 
     }
+
+    @When("user enter valid email {string} and invalid password {string}")
+    public void userEnterValidEmailAndInvalidPassword(String email, String password) {
+        signInPage.enterCredentials(ConfigReader.getConfigValue("signIn.email"), password);
+
+    }
+
+
 }

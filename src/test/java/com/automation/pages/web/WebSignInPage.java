@@ -24,11 +24,24 @@ public class WebSignInPage extends WebBasePage implements SignInPage {
     @FindBy(xpath = "//div[contains(@class,'uitk-banner-critical')]")
     WebElement errorMessage;
 
+    @FindBy(id = "try-again")
+    WebElement tryAgainButton;
+
     public void enterCredentials(String email, String password) {
         emailInput.sendKeys(email);
         continueButton.click();
         passwordButton.click();
         passwordInput.sendKeys(password);
+        signInButton.click();
+        if(isDisplayed(tryAgainButton)){
+            tryAgainButton.click();
+            emailInput.sendKeys(email);
+            continueButton.click();
+            passwordButton.click();
+            passwordInput.sendKeys(password);
+            signInButton.click();
+        }
+
 
     }
 
@@ -43,6 +56,8 @@ public class WebSignInPage extends WebBasePage implements SignInPage {
 
     public void clickOnSignInButton() {
         signInButton.click();
+
+
     }
 
     public boolean isSignInPageDisplayed() {

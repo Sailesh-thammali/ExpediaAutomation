@@ -7,8 +7,7 @@ Feature: Validate on sign in functionality with valid and invalid credentials
     Then verify user is on sign in page
 
   Scenario: Successful sign in with valid credentials
-    When user enter "user.email" and "user.password"
-    And click on continue
+    When user enter "user.email","user.password" and clicks on signIn
     Then verify user signed in successfully
 
   Scenario Outline: Unsuccessful sign in with invalid email
@@ -23,8 +22,7 @@ Feature: Validate on sign in functionality with valid and invalid credentials
       | Vrbooi@gmail.com      |
 
   Scenario Outline: Unsuccessful sign in with invalid password
-    When user enter "user.email" and "<invalid.password>"
-    And click on continue
+    When user enter valid email "user.email" and invalid password "<invalid.password>"
     Then verify error message is displayed "error.password.msg"
     Examples:
       | invalid.password |
