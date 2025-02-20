@@ -12,9 +12,6 @@ import com.automation.pages.web.WebFlightReviewPage;
 
 
 
-import com.automation.pages.web.*;
-
-
 public class BaseSteps {
     HomePage homePage;
     SignInPage signInPage;
@@ -43,4 +40,4 @@ public class BaseSteps {
 
         }
     }
-}
+
