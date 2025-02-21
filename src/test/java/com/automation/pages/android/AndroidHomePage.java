@@ -4,7 +4,7 @@ import com.automation.interfaces.HomePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public  class AndroidHomePage extends AndroidBasePage implements HomePage {
+public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.Button")
     WebElement getStartedBtn;
 
@@ -41,13 +41,15 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button")
     WebElement signIn;
 
+    @FindBy(xpath = "//android.view.View[@content-desc=\"List of choices, 3 choices\"]/android.view.View/android.view.View[1]/android.widget.Button")
+    WebElement stayBtn;
+
     @Override
     public void openApplication() {
 
         getStartedBtn.click();
 
-        if(isDisplayed(denyBtn))
-        {
+        if (isDisplayed(denyBtn)) {
             denyBtn.click();
         }
         cancelBtn.click();
@@ -111,7 +113,7 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @Override
     public void clickOnStaysOption() {
-
+        stayBtn.click();
     }
 }
 
