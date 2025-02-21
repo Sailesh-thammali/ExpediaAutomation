@@ -108,6 +108,11 @@ public  class AndroidHomePage extends AndroidBasePage implements HomePage {
     public void clickOnCarsOption() {
 
     }
+
+    @Override
+    public void clickOnStaysOption() {
+
+    }
 }
 
 

@@ -13,11 +13,12 @@ public class CarSearchSteps extends BaseSteps {
 
     }
 
-    @When("user enters {string},{string},{string},{string} and {string}")
-    public void userEntersAnd(String arg0, String arg1, String arg2, String arg3, String arg4) {
+    @When("user enters {string},{string},{string},{string},{string} and {string}")
+    public void userEntersAnd(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5)  {
         carSearchPage.enterFromCity(ConfigReader.getConfigValue("car.from.city"));
         carSearchPage.enterToCity(ConfigReader.getConfigValue("car.to.city"));
-        carSearchPage.enterDate(ConfigReader.getConfigValue("car.date"));
+        carSearchPage.enterFromDate(ConfigReader.getConfigValue("car.from.date"));
+        carSearchPage.enterToDate(ConfigReader.getConfigValue("car.to.date"));
         carSearchPage.enterPickupAndDropOffTime(ConfigReader.getConfigValue("car.pickup.time"), ConfigReader.getConfigValue("car.dropOff.time"));
     }
 
@@ -26,6 +27,8 @@ public class CarSearchSteps extends BaseSteps {
         carSearchPage.clickOnSearchButton();
 
     }
+
+
 
 
 }

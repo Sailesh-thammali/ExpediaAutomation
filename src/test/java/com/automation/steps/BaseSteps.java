@@ -18,6 +18,8 @@ public class BaseSteps {
     ReviewPage reviewPage;
     CarSearchPage carSearchPage;
     CarListingPage carListingPage;
+    StaySearchPage staySearchPage;
+    StayListingPage stayListingPage;
 
     public BaseSteps() {
         if (System.getProperty("platform").equals("web")) {
@@ -28,6 +30,9 @@ public class BaseSteps {
             reviewPage = new WebFlightReviewPage();
             carSearchPage = new WebCarSearchPage();
             carListingPage = new WebCarListingPage();
+            staySearchPage=new WebStaySearchPage();
+            stayListingPage=new WebStayListingPage();
+
         } else {
             homePage = new AndroidHomePage();
             signInPage = new AndroidSignInPage();

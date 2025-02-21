@@ -17,4 +17,14 @@ public class AndroidCarListingPage extends AndroidBasePage implements CarListing
     public boolean isCarListingPageDisplayed() {
         return false;
     }
+
+    @Override
+    public void printLocationDetails() {
+
+    }
+
+    @Override
+    public boolean isCarReviewPageDisplayed() {
+        return false;
+    }
 }
