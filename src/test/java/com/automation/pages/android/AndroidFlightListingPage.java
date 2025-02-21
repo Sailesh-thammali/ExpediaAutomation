@@ -20,4 +20,44 @@ public class AndroidFlightListingPage extends AndroidBasePage implements FlightL
     public boolean isFlightListingPageDisplayed() {
         return filterBtn.isDisplayed();
     }
+
+    @Override
+    public void clickOnSortLowToHighOption() {
+
+    }
+
+    @Override
+    public void clickOnSortHighToLowOption() {
+
+    }
+
+    @Override
+    public boolean isPriceLowToHigh() {
+        return false;
+    }
+
+    @Override
+    public boolean isPriceHighToLow() {
+        return false;
+    }
+
+    @Override
+    public void clickOnAirIndiaFilter() {
+
+    }
+
+    @Override
+    public boolean isSelectedFlightShown(String company) {
+        return false;
+    }
+
+    @Override
+    public void clickOnDirectFilter() {
+
+    }
+
+    @Override
+    public boolean isSelectedStopsShown(String stops) {
+        return false;
+    }
 }

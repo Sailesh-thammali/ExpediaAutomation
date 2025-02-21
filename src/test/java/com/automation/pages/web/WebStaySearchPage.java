@@ -78,7 +78,9 @@ public class WebStaySearchPage extends WebBasePage implements StaySearchPage {
 
     public void enterNoOfTravellers(String noOfAdults) {
         travellersButton.click();
-        adultsButton.click();
+        for(int i=0;i<Integer.parseInt(noOfAdults)-2;i++) {
+            adultsButton.click();
+        }
         travellersDoneButton.click();
     }
 

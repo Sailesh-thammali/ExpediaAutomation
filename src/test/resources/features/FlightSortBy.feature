@@ -5,7 +5,7 @@ Feature:Validate on sort by functionality
     When user clicks on flights option
     Then verify user is on flight search page
     When user clicks on one-way option
-    And enters "from.city","to.city","date" and "1"
+    And enters "from.city","to.city","date" and "travellers"
     And clicks on search button
     Then verify user is on flight listing page
 

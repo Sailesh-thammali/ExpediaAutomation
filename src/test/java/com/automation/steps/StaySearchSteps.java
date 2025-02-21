@@ -17,6 +17,6 @@ public class StaySearchSteps extends BaseSteps{
         staySearchPage.enterCity(ConfigReader.getConfigValue("stay.city"));
         staySearchPage.enterFromDate(ConfigReader.getConfigValue("stay.from.date"));
         staySearchPage.enterToDate(ConfigReader.getConfigValue("stay.to.date"));
-        staySearchPage.enterNoOfTravellers("stay.travellers");
+        staySearchPage.enterNoOfTravellers(ConfigReader.getConfigValue("stay.travellers"));
     }
 }

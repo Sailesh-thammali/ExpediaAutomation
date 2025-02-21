@@ -89,7 +89,9 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
 
     public void enterNoOfTravellers(String noOfAdults) {
         travellersButton.click();
-        adultsButton.click();
+        for(int i=0;i<Integer.parseInt(noOfAdults)-1;i++) {
+            adultsButton.click();
+        }
         travellersDoneButton.click();
     }
 
