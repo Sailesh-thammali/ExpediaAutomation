@@ -22,6 +22,7 @@ public class SignInSteps extends BaseSteps{
 
     @When("user enter {string}")
     public void userEnter(String email) {
+
         signInPage.enterEmail(email);
     }
 
