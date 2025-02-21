@@ -22,9 +22,15 @@ public class AndroidCarSearchPage extends AndroidBasePage implements CarSearchPa
     }
 
     @Override
-    public void enterDate(String date) {
+    public void enterFromDate(String date) {
 
     }
+
+    @Override
+    public void enterToDate(String date) {
+
+    }
+
 
     @Override
     public void enterPickupAndDropOffTime(String pickUpTime, String dropOffTime) {

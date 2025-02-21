@@ -1,7 +1,6 @@
 package com.automation.interfaces;
 
 
-
 public interface HomePage {
     void openApplication();
 
@@ -20,5 +19,7 @@ public interface HomePage {
     void clickOnFlightsOption();
 
     void clickOnCarsOption();
+
+    void clickOnStaysOption();
 
 }

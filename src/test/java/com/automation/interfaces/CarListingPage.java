@@ -5,4 +5,5 @@ public interface CarListingPage {
     void printCarDetails();
     boolean isCarListingPageDisplayed();
     void printLocationDetails();
+    boolean isCarReviewPageDisplayed();
 }

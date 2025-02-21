@@ -19,6 +19,9 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(xpath = "//span[contains(text(),'Cars')]")
     WebElement carsOption;
 
+    @FindBy(xpath = "//span[contains(text(),'Stays')]")
+    WebElement staysOption;
+
     @FindBy(xpath = "//div[contains(@data-testid,'memberprofile-mediumview')]")
     WebElement accountElement;
 
@@ -61,5 +64,8 @@ public class WebHomePage extends WebBasePage implements HomePage {
 
     public void clickOnCarsOption(){
         carsOption.click();
+    }
+    public void clickOnStaysOption(){
+        staysOption.click();
     }
 }

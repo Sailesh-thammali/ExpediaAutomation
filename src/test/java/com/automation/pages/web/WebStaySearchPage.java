@@ -1,31 +1,21 @@
 package com.automation.pages.web;
 
-import com.automation.interfaces.CarSearchPage;
+import com.automation.interfaces.StaySearchPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
-    @FindBy(xpath = "//button[contains(@aria-label,'Pick-up')]")
-    WebElement fromElement;
+public class WebStaySearchPage extends WebBasePage implements StaySearchPage {
+    @FindBy(xpath = "//button[contains(@aria-label,'Where to?')]")
+    WebElement cityElement;
 
-    @FindBy(xpath = "//input[contains(@placeholder,'Pick-up')]")
-    WebElement fromCityInput;
+    @FindBy(xpath = "//input[contains(@placeholder,'Where to?')]")
+    WebElement cityInput;
 
-    @FindBy(xpath = "//button[contains(@data-stid,'pick_up_location-result-item')]")
-    List<WebElement> fromCityList;
-
-    @FindBy(xpath = "//button[contains(@aria-label,'Same as pick-up, Drop-off')]")
-    WebElement toElement;
-
-    @FindBy(xpath = "//input[contains(@data-stid,'drop_off_location-menu-input')]")
-    WebElement toCityInput;
-
-    @FindBy(xpath = "//button[contains(@data-stid,'drop_off_location-result-item-button')]")
-    List<WebElement> toCityList;
+    @FindBy(xpath = "//button[contains(@data-stid,'destination_form_field-result-item-button')]")
+    List<WebElement> cityList;
 
     @FindBy(xpath = "//button[contains(@data-testid,'uitk-date-selector-input1-default')]")
     WebElement calendarElement;
@@ -41,28 +31,24 @@ public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
     @FindBy(xpath = "//button[text()='Done']")
     WebElement calendarDoneButton;
 
-    @FindBy(id = "pick_up_time")
-    WebElement pickUpTimeElement;
+    @FindBy(xpath = "//button[contains(@data-stid,'open-room-picker')]")
+    WebElement travellersButton;
 
-    @FindBy(id = "drop_off_time")
-    WebElement dropOffTimeElement;
+    @FindBy(xpath = "(//span[@class='uitk-step-input-button'])[2]")
+    WebElement adultsButton;
+
+    @FindBy(id = "traveler_selector_done_button")
+    WebElement travellersDoneButton;
 
     @FindBy(id = "search_button")
     WebElement searchButton;
 
-    public void enterFromCity(String fromCity) {
-        fromElement.click();
-        fromCityInput.sendKeys(fromCity);
-        fromCityList.getFirst().click();
+    public void enterCity(String city){
+        cityElement.click();
+        cityInput.sendKeys(city);
+        cityList.getFirst().click();
     }
-
-    public void enterToCity(String toCity) {
-        toElement.click();
-        toCityInput.sendKeys(toCity);
-        toCityList.getFirst().click();
-    }
-
-    public void enterFromDate(String date) {
+    public void enterFromDate(String date)  {
         calendarElement.click();
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
@@ -70,40 +56,42 @@ public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
             nextButton.click();
             actMonthYear = monthAndYear.getText();
         }
-
+        pause(2000);
         String dateValue = getFormattedDate("dd", date, "dd/MM/yyyy");
         WebElement dateElement = driver.findElement(By.xpath(String.format(XPATH_DATE_VALUE, dateValue)));
         dateElement.click();
-
+        //calendarDoneButton.click();
     }
-    public void enterToDate(String date) {
+    public void enterToDate(String date)  {
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
         while (!expMonthYear.equalsIgnoreCase(actMonthYear)) {
             nextButton.click();
             actMonthYear = monthAndYear.getText();
         }
-
+        //pause(2000);
         String dateValue = getFormattedDate("dd", date, "dd/MM/yyyy");
         WebElement dateElement = driver.findElement(By.xpath(String.format(XPATH_DATE_VALUE, dateValue)));
         dateElement.click();
         calendarDoneButton.click();
     }
 
-    public void enterPickupAndDropOffTime(String pickUpTime, String dropOffTime) {
-        Select pickUpSelect = new Select(pickUpTimeElement);
-        pickUpSelect.selectByVisibleText(pickUpTime);
-
-        Select dropOffSelect = new Select(dropOffTimeElement);
-        dropOffSelect.selectByVisibleText(dropOffTime);
+    public void enterNoOfTravellers(String noOfAdults) {
+        travellersButton.click();
+        adultsButton.click();
+        travellersDoneButton.click();
     }
 
     public void clickOnSearchButton() {
         searchButton.click();
     }
-
-    public boolean isCarSearchPageDisplayed() {
+    public boolean isStaySearchPageDisplayed(){
         return searchButton.isDisplayed();
+    }
+
+    @Override
+    public boolean isCarReviewPageDisplayed() {
+        return false;
     }
 
 

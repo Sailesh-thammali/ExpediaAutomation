@@ -22,4 +22,9 @@ public class CarListingSteps extends BaseSteps {
         carListingPage.printCarDetails();
 
     }
+
+    @Then("verify user is on car review page")
+    public void verifyUserIsOnCarReviewPage() {
+        Assert.assertTrue(carListingPage.isCarReviewPageDisplayed());
+    }
 }

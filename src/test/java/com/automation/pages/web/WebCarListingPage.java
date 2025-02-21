@@ -37,7 +37,7 @@ public class WebCarListingPage extends WebBasePage implements CarListingPage {
     }
 
     public void printLocationDetails() {
-        switchToNewWindow();
+
         String text = pickUpSummary.getText();
         String[] lines = text.split("\n");
         String pickUpLocation = lines[0];
@@ -56,5 +56,9 @@ public class WebCarListingPage extends WebBasePage implements CarListingPage {
 
     public boolean isCarListingPageDisplayed() {
         return carSelectButton.getFirst().isDisplayed();
+    }
+    public boolean isCarReviewPageDisplayed(){
+        switchToNewWindow();
+        return pickUpSummary.isDisplayed();
     }
 }
