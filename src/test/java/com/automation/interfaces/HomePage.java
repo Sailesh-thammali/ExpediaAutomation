@@ -22,4 +22,16 @@ public interface HomePage {
 
     void clickOnStaysOption();
 
+    void clickOnRegionButton();
+
+    boolean isRegionOptionDisplayed();
+
+    void selectRegionOption(String region);
+
+    void selectLanguageOption(String language);
+
+    void clickOnSaveButton();
+
+    boolean isSelectedLanguageDisplayed(String language);
+
 }

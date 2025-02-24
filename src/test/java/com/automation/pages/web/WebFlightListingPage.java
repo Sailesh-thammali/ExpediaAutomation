@@ -35,7 +35,7 @@ public class WebFlightListingPage extends WebBasePage implements FlightListingPa
     @FindBy(xpath = "//input[contains(@value,'AI')]")
     WebElement airIndiaFilter;
 
-    @FindBy(xpath = "//input[contains(@value,'0')]")
+    @FindBy(xpath = "//input[@name='NUM_OF_STOPS']")
     WebElement directStopFilter;
 
     @FindBy(xpath = "//span[@class=\"uitk-text uitk-type-300 uitk-type-medium uitk-text-positive-theme\"]")

@@ -8,4 +8,5 @@ public interface FlightSearchPage {
     void enterNoOfTravellers(String noOfAdults);
     void clickOnSearchButton();
     boolean isFlightSearchPageDisplayed();
+    boolean isErrorDisplayed();
 }

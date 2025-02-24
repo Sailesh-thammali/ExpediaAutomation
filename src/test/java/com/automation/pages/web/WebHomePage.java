@@ -2,8 +2,10 @@ package com.automation.pages.web;
 
 import com.automation.interfaces.HomePage;
 import com.automation.utils.ConfigReader;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class WebHomePage extends WebBasePage implements HomePage {
 
@@ -28,44 +30,84 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(xpath = "//div[text()='Sign out']")
     WebElement signOutButton;
 
+    @FindBy(xpath = "//button[@data-stid=\"button-type-picker-trigger\"]")
+    WebElement regionButton;
 
-    public void openApplication(){
+    @FindBy(id = "site-selector")
+    WebElement regionSelector;
+
+    @FindBy(id = "language-selector")
+    WebElement languageSelector;
+
+    @FindBy(xpath = "//button[text()='Save']")
+    WebElement saveButton;
+
+
+    public void openApplication() {
         driver.get(ConfigReader.getConfigValue("application.url"));
     }
 
-    public void clickOnSignInButton(){
-       // signInElement.click();
+    public void clickOnSignInButton() {
+        // signInElement.click();
         signInButton.click();
     }
 
-    public boolean isHomePageDisplayed(){
+    public boolean isHomePageDisplayed() {
         return flightsOption.isDisplayed();
     }
 
-    public void clickOnAccountElement(){
+    public void clickOnAccountElement() {
         accountElement.click();
     }
-    public void clickOnSignOutButton(){
+
+    public void clickOnSignOutButton() {
         signOutButton.click();
     }
 
-    public boolean isAccountElementDisplayed(){
+    public boolean isAccountElementDisplayed() {
         pause(5000);
         return accountElement.isDisplayed();
     }
 
-    public boolean isSignInElementDisplayed(){
+    public boolean isSignInElementDisplayed() {
         return signInElement.isDisplayed();
     }
 
-    public void clickOnFlightsOption(){
+    public void clickOnFlightsOption() {
         flightsOption.click();
     }
 
-    public void clickOnCarsOption(){
+    public void clickOnCarsOption() {
         carsOption.click();
     }
-    public void clickOnStaysOption(){
+
+    public void clickOnStaysOption() {
         staysOption.click();
+    }
+
+    public void clickOnRegionButton() {
+        regionButton.click();
+    }
+
+    public boolean isRegionOptionDisplayed() {
+        return saveButton.isDisplayed();
+    }
+
+    public void selectRegionOption(String region) {
+        Select select = new Select(regionSelector);
+        select.selectByVisibleText(region);
+    }
+
+    public void selectLanguageOption(String language) {
+        Select select = new Select(languageSelector);
+        select.selectByVisibleText(language);
+    }
+
+    public void clickOnSaveButton() {
+        saveButton.click();
+    }
+
+    public boolean isSelectedLanguageDisplayed(String language) {
+        return regionButton.getText().equals(language);
     }
 }

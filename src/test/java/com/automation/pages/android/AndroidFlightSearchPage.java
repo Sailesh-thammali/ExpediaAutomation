@@ -93,4 +93,9 @@ public class AndroidFlightSearchPage extends AndroidBasePage implements FlightSe
     public boolean isFlightSearchPageDisplayed() {
         return searchBtn.isDisplayed();
     }
+
+    @Override
+    public boolean isErrorDisplayed() {
+        return false;
+    }
 }

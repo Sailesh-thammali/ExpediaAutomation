@@ -115,6 +115,36 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     public void clickOnStaysOption() {
         stayBtn.click();
     }
+
+    @Override
+    public void clickOnRegionButton() {
+
+    }
+
+    @Override
+    public boolean isRegionOptionDisplayed() {
+        return false;
+    }
+
+    @Override
+    public void selectRegionOption(String region) {
+
+    }
+
+    @Override
+    public void selectLanguageOption(String language) {
+
+    }
+
+    @Override
+    public void clickOnSaveButton() {
+
+    }
+
+    @Override
+    public boolean isSelectedLanguageDisplayed(String language) {
+        return false;
+    }
 }
 
 

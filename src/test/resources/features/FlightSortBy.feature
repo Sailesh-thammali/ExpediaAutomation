@@ -15,4 +15,4 @@ Feature:Validate on sort by functionality
 
   Scenario: Verify user can get all prices from low to high
     When user clicks on price low to high
-    Then veriAWfy user can get prices in low to high
+    Then verify user can get prices in low to high

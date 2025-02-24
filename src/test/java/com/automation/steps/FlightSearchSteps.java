@@ -33,5 +33,14 @@ public class FlightSearchSteps extends BaseSteps{
     }
 
 
+    @Then("verify error is displayed")
+    public void verifyErrorIsDisplayed() {
+        Assert.assertTrue(flightSearchPage.isErrorDisplayed());
+    }
 
+    @And("enters {string} and {string}")
+    public void entersAnd(String fromCity, String toCity) {
+        flightSearchPage.enterFromCity(fromCity);
+        flightSearchPage.enterToCity(toCity);
+    }
 }

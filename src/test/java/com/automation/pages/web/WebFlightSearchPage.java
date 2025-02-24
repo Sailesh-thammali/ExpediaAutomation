@@ -56,6 +56,9 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
     @FindBy(id = "search_button")
     WebElement searchButton;
 
+    @FindBy(id = "undefined-error")
+    WebElement errorMessage;
+
     public void clickOnOnewayOption() {
         oneWayOption.click();
     }
@@ -90,6 +93,7 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
     public void enterNoOfTravellers(String noOfAdults) {
         travellersButton.click();
         for(int i=0;i<Integer.parseInt(noOfAdults)-1;i++) {
+            waitForElementClickable(adultsButton);
             adultsButton.click();
         }
         travellersDoneButton.click();
@@ -101,5 +105,9 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
 
     public boolean isFlightSearchPageDisplayed(){
         return searchButton.isDisplayed();
+    }
+    public boolean isErrorDisplayed(){
+        System.out.println(errorMessage.getText());
+        return errorMessage.isDisplayed();
     }
 }
