@@ -1,3 +1,4 @@
+@android @web
 Feature: Validate Flight Searching Functionality
 
   Scenario Outline: Verify user can search flights with same source and destination

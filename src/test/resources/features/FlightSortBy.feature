@@ -1,4 +1,6 @@
+@android @web
 Feature:Validate on sort by functionality
+
   Background:
     Given user open application
     Then verify user is on home page

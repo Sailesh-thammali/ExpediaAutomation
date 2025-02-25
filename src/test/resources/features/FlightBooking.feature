@@ -1,4 +1,6 @@
+@android @web
 Feature: Validate Flight Booking Functionality
+
   Scenario: Verify user can book flights
     Given user open application
     Then verify user is on home page

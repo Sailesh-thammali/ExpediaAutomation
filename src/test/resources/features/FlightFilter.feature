@@ -1,3 +1,4 @@
+@android @web
 Feature:Validate on filter functionality on flight details
 
   Background:
