@@ -1,0 +1,11 @@
+{
+  "firstname": "John",
+  "lastname": "Greesham :)",
+  "totalprice": 200,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2020-10-01",
+    "checkout": "2020-10-05"
+  },
+  "additionalneeds": "Room with pool and bed of course :)"
+}

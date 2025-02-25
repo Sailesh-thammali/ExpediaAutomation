@@ -1,3 +1,4 @@
+@android @web
 Feature: Validate Car Rental Functionality
   Scenario: Verify user can rent cars
     Given user open application

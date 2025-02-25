@@ -1,3 +1,4 @@
+@android @web
 Feature: Validate on sign in functionality with valid and invalid credentials
 
   Background:

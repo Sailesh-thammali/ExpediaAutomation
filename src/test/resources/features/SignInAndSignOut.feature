@@ -1,4 +1,6 @@
+@android @web
 Feature: Validate Sign In And Sign Out Functionality
+
   Scenario: Verify User Can Sign In and sign out
     Given user open application
     Then verify user is on home page

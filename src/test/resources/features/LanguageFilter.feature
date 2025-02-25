@@ -1,3 +1,4 @@
+@android @web
 Feature: Validate language filter functionality
 
   Scenario: Verify user can change region and language
