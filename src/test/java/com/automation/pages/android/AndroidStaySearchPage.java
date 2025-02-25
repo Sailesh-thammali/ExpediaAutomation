@@ -17,7 +17,7 @@ public class AndroidStaySearchPage extends AndroidBasePage implements StaySearch
     @FindBy(xpath = "//android.widget.TextView[@text]")
     WebElement monthAndYear;
 
-    String XPATH_DATE_VALUE= "(//android.view.View[@resource-id=\"Day\"])[%s]/android.widget.Button";
+    String XPATH_DATE_VALUE = "(//android.view.View[@resource-id=\"Day\"])[%s]/android.widget.Button";
 
     @FindBy(xpath = "//android.view.View[@resource-id=\"DateSelector_FullCentralSheet_Button\"]/android.widget.Button")
     WebElement calenderDone;
@@ -30,6 +30,7 @@ public class AndroidStaySearchPage extends AndroidBasePage implements StaySearch
 
     @FindBy(xpath = "//android.view.View[@resource-id=\"SearchButton\"]/android.widget.Button")
     WebElement searchBtn;
+
     @Override
     public void enterCity(String city) {
         enterCityInput.click();
@@ -73,14 +74,14 @@ public class AndroidStaySearchPage extends AndroidBasePage implements StaySearch
 
     @Override
     public void enterNoOfTravellers(String noOfAdults) {
-travellersButton.click();
-travellerDone.click();
+        travellersButton.click();
+        travellerDone.click();
 
     }
 
     @Override
     public void clickOnSearchButton() {
-searchBtn.click();
+        searchBtn.click();
     }
 
     @Override

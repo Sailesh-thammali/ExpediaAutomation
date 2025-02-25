@@ -14,7 +14,7 @@ public class CarSearchSteps extends BaseSteps {
     }
 
     @When("user enters {string},{string},{string},{string},{string} and {string}")
-    public void userEntersAnd(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5)  {
+    public void userEntersAnd(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5) {
         carSearchPage.enterFromCity(ConfigReader.getConfigValue("car.from.city"));
         carSearchPage.enterToCity(ConfigReader.getConfigValue("car.to.city"));
         carSearchPage.enterFromDate(ConfigReader.getConfigValue("car.from.date"));
@@ -27,8 +27,6 @@ public class CarSearchSteps extends BaseSteps {
         carSearchPage.clickOnSearchButton();
 
     }
-
-
 
 
 }
