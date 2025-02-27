@@ -19,14 +19,6 @@ public class RequestSteps {
         RestAssuredUtils.clear();
         if (endPoint.contains("@id")) {
             endPoint = endPoint.replace("@id", ConfigReader.getConfigValue("booking.id"));
-        } else if (endPoint.contains("?firstname")) {
-            endPoint = endPoint.replace("=", ConfigReader.getConfigValue("firstname"));
-        } else if (endPoint.contains("?lastname")) {
-            endPoint = endPoint.replace("=", ConfigReader.getConfigValue("lastname"));
-        } else if (endPoint.contains("?checkout")) {
-            endPoint = endPoint.replace("=", ConfigReader.getConfigValue("checkout.date"));
-        } else if (endPoint.contains("?checkin")) {
-            endPoint = endPoint.replace("=", ConfigReader.getConfigValue("checkin.date"));
         }
         RestAssuredUtils.setEndPoint(endPoint);
     }

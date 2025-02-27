@@ -20,7 +20,7 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Sign In Link\"]")
     WebElement signInBtn;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"List of choices, 3 choices\"]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View")
+    @FindBy(xpath = "//android.widget.TextView[@text=\"Flights\"]")
     WebElement flightIcon;
 
     @FindBy(xpath = "//android.widget.ScrollView/android.view.View[1]//android.widget.TextView[@text]")
@@ -41,20 +41,20 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button")
     WebElement signIn;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"List of choices, 3 choices\"]/android.view.View/android.view.View[1]/android.widget.Button")
+    @FindBy(xpath = "//android.widget.TextView[@text=\"Stays\"]")
     WebElement stayBtn;
 
     @Override
     public void openApplication() {
 
-        getStartedBtn.click();
+      /*  getStartedBtn.click();
 
         if (isDisplayed(denyBtn)) {
             denyBtn.click();
         }
         cancelBtn.click();
         cancelBtn2.click();
-        denyBtn.click();
+        denyBtn.click();*/
 
     }
 

@@ -32,6 +32,7 @@ public class WebSignInPage extends WebBasePage implements SignInPage {
         continueButton.click();
         passwordButton.click();
         passwordInput.sendKeys(password);
+        pause(1000);
         signInButton.click();
         if(isDisplayed(tryAgainButton)){
             tryAgainButton.click();

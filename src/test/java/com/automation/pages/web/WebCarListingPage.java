@@ -1,15 +1,29 @@
 package com.automation.pages.web;
 
 import com.automation.interfaces.CarListingPage;
-import com.automation.interfaces.FlightListingPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WebCarListingPage extends WebBasePage implements CarListingPage {
     @FindBy(xpath = "//button[@data-auto-id='bookButton']")
     List<WebElement> carSelectButton;
+
+    @FindBy(xpath = "//div[@data-auto-id=\"txtPassengers\"]")
+    List<WebElement> noOfPassengers;
+
+    @FindBy(xpath = "//div[@for=\"passengers-99\"]")
+    WebElement passengersButton;
+
+    @FindBy(xpath = "(//button[@aria-label=\"Sort by Price\"])[2]")
+    WebElement sortByPriceButton;
+
+    @FindBy(xpath = "//div[@class=\"ct-price-container\"]")
+    List<WebElement> carPrices;
 
     @FindBy(xpath = "//div[@data-auto-id='pickUpLocationReadOnly']")
     WebElement pickUpSummary;
@@ -22,6 +36,9 @@ public class WebCarListingPage extends WebBasePage implements CarListingPage {
 
     @FindBy(className = "ct-total-price")
     WebElement vehiclePrice;
+
+    List<Double> beforePrices = new ArrayList<>();
+    List<Double> afterPrices;
 
     public void clickOnFirstCar() {
         carSelectButton.getFirst().click();
@@ -54,10 +71,49 @@ public class WebCarListingPage extends WebBasePage implements CarListingPage {
 
     }
 
+    public void clickOnPassengersBox() {
+        passengersButton.click();
+        pause(3000);
+    }
+
+    public boolean isNoOfPassengersDisplayed() {
+        for (WebElement pass : noOfPassengers) {
+            if (!pass.getText().contains("7")) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+
+    public void clickOnSortLowToHighOption() {
+        beforePrices = beforeCarPrices();
+        sortByPriceButton.click();
+        pause(3000);
+    }
+
+    private List<Double> beforeCarPrices() {
+        pause(3000);
+        for (int i = 0; i < carPrices.size(); i++) {
+            beforePrices.add(i, Double.parseDouble(carPrices.get(i).getText().replace("₨ ", "").replace(",", "")));
+        }
+        return beforePrices;
+    }
+
+    public boolean isPriceLowToHigh() {
+        afterPrices = new ArrayList<>();
+        for (int i = 0; i < carPrices.size(); i++) {
+            afterPrices.add(i, Double.parseDouble(carPrices.get(i).getText().replace("₨ ", "").replace(",", "")));
+        }
+        Collections.sort(beforePrices);
+        return beforePrices.equals(afterPrices);
+    }
+
     public boolean isCarListingPageDisplayed() {
         return carSelectButton.getFirst().isDisplayed();
     }
-    public boolean isCarReviewPageDisplayed(){
+
+    public boolean isCarReviewPageDisplayed() {
         switchToNewWindow();
         return pickUpSummary.isDisplayed();
     }

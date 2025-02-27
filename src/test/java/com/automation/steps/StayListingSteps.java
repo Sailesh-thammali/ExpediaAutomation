@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class StayListingSteps extends BaseSteps{
+public class StayListingSteps extends BaseSteps {
     @Then("verify user is on stay listing page")
     public void verifyUserIsOnStayListingPage() {
         Assert.assertTrue(stayListingPage.isStayListingPageDisplayed());

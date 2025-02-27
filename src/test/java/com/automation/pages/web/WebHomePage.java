@@ -61,6 +61,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
     }
 
     public void clickOnSignOutButton() {
+        pause(1000);
         signOutButton.click();
     }
 
@@ -70,6 +71,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
     }
 
     public boolean isSignInElementDisplayed() {
+        pause(2000);
         return signInElement.isDisplayed();
     }
 

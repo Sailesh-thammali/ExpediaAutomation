@@ -30,8 +30,6 @@ public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
     WebElement errorMsg;
 
 
-
-
     @Override
     public void enterCredentials(String email, String password) {
         cancelBtn.click();

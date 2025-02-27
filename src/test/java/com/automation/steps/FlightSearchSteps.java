@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class FlightSearchSteps extends BaseSteps{
+public class FlightSearchSteps extends BaseSteps {
     @Then("verify user is on flight search page")
     public void verifyUserIsOnFlightSearchPage() {
         Assert.assertTrue(flightSearchPage.isFlightSearchPageDisplayed());
@@ -20,7 +20,7 @@ public class FlightSearchSteps extends BaseSteps{
 
 
     @And("enters {string},{string},{string} and {string}")
-    public void entersAnd(String arg0, String arg1, String arg2, String arg3)  {
+    public void entersAnd(String arg0, String arg1, String arg2, String arg3) {
         flightSearchPage.enterFromCity(ConfigReader.getConfigValue("flight.from.city"));
         flightSearchPage.enterToCity(ConfigReader.getConfigValue("flight.to.city"));
         flightSearchPage.enterDate(ConfigReader.getConfigValue("flight.date"));

@@ -27,4 +27,24 @@ public class CarListingSteps extends BaseSteps {
     public void verifyUserIsOnCarReviewPage() {
         Assert.assertTrue(carListingPage.isCarReviewPageDisplayed());
     }
+
+    @When("user selects the number of passengers {string}")
+    public void userSelectsTheNumberOfPassengers(String arg0) {
+        carListingPage.clickOnPassengersBox();
+    }
+
+    @Then("verify user gets all cars as selected number of passengers")
+    public void verifyUserGetsAllCarsAsSelectedNumberOfPassengers() {
+        Assert.assertTrue(carListingPage.isNoOfPassengersDisplayed());
+    }
+
+    @When("user clicks on price sort by low to high")
+    public void userClicksOnPriceSortByLowToHigh() {
+        carListingPage.clickOnSortLowToHighOption();
+    }
+
+    @Then("verify user can get car prices in low to high")
+    public void verifyUserCanGetCarPricesInLowToHigh() {
+        Assert.assertTrue(carListingPage.isPriceLowToHigh());
+    }
 }

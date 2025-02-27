@@ -30,8 +30,8 @@ public class BaseSteps {
             reviewPage = new WebFlightReviewPage();
             carSearchPage = new WebCarSearchPage();
             carListingPage = new WebCarListingPage();
-            staySearchPage=new WebStaySearchPage();
-            stayListingPage=new WebStayListingPage();
+            staySearchPage = new WebStaySearchPage();
+            stayListingPage = new WebStayListingPage();
 
         } else {
             homePage = new AndroidHomePage();
@@ -39,8 +39,7 @@ public class BaseSteps {
             flightSearchPage = new AndroidFlightSearchPage();
             flightListingPage = new AndroidFlightListingPage();
             reviewPage = new AndroidReviewPage();
-            carListingPage = new AndroidCarListingPage();
-            carSearchPage = new AndroidCarSearchPage();
+            staySearchPage = new AndroidStaySearchPage();
 
         }
 
