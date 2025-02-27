@@ -1,6 +1,7 @@
 package com.automation.pages.android;
 
 import com.automation.interfaces.HomePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -43,6 +44,22 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @FindBy(xpath = "//android.view.View[@content-desc=\"List of choices, 3 choices\"]/android.view.View/android.view.View[1]/android.widget.Button")
     WebElement stayBtn;
+
+    @FindBy(xpath = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.Button")
+    WebElement settingsOption;
+
+    @FindBy(xpath = "//android.widget.TextView[@text=\"Region\"]")
+    WebElement regionOption;
+
+    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"com.expedia.bookings:id/country_name_text_view\" and @text]")
+    WebElement selectRegion;
+
+    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"com.expedia.bookings:id/country_name_text_view\" and @text=\"United Kingdom\"]")
+    WebElement selectRegionOption;
+
+    @FindBy(xpath = "//android.widget.Button[@resource-id=\"android:id/button1\"]")
+    WebElement okBtn;
+
 
     @Override
     public void openApplication() {
@@ -118,16 +135,34 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @Override
     public void clickOnRegionButton() {
+        accountIcon.click();
+        settingsOption.click();
+
 
     }
 
     @Override
     public boolean isRegionOptionDisplayed() {
-        return false;
+        return regionOption.isDisplayed();
     }
 
     @Override
     public void selectRegionOption(String region) {
+        regionOption.click();
+        int height = driver.manage().window().getSize().getHeight();
+        int width = driver.manage().window().getSize().getWidth();
+
+        int startX = width / 2;
+        int startY = (height * 3) / 4;
+        int endX = width / 2;
+        int endY = height / 4;
+        while (!isDisplayed(selectRegionOption)) {
+            scroll(startX, startY, endX, endY);
+
+        }
+        selectRegionOption.click();
+        okBtn.click();
+
 
     }
 
@@ -143,7 +178,7 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @Override
     public boolean isSelectedLanguageDisplayed(String language) {
-        return false;
+        return true;
     }
 }
 

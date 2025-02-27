@@ -47,6 +47,9 @@ public class AndroidFlightSearchPage extends AndroidBasePage implements FlightSe
     @FindBy(xpath = "//android.view.View[@resource-id=\"SearchButton\"]/android.widget.Button")
     WebElement searchBtn;
 
+    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"bannerHeading\"]")
+    WebElement errorMsg;
+
 
     @Override
     public void clickOnOnewayOption() {
@@ -96,6 +99,6 @@ public class AndroidFlightSearchPage extends AndroidBasePage implements FlightSe
 
     @Override
     public boolean isErrorDisplayed() {
-        return false;
+        return errorMsg.isDisplayed();
     }
 }
