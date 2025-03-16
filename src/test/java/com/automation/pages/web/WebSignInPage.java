@@ -34,7 +34,7 @@ public class WebSignInPage extends WebBasePage implements SignInPage {
         passwordInput.sendKeys(password);
         pause(1000);
         signInButton.click();
-        if(isDisplayed(tryAgainButton)){
+        if (isDisplayed(tryAgainButton)) {
             tryAgainButton.click();
             emailInput.sendKeys(email);
             continueButton.click();
@@ -43,22 +43,19 @@ public class WebSignInPage extends WebBasePage implements SignInPage {
             signInButton.click();
         }
 
-
     }
 
     public void enterEmail(String email) {
         emailInput.sendKeys(email);
     }
 
-    public void clickOnContinueButton(){
+    public void clickOnContinueButton() {
         continueButton.click();
     }
 
 
     public void clickOnSignInButton() {
         signInButton.click();
-
-
     }
 
     public boolean isSignInPageDisplayed() {

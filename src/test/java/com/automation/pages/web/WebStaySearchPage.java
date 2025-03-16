@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class WebStaySearchPage extends WebBasePage implements StaySearchPage {
+
     @FindBy(xpath = "//button[contains(@aria-label,'Where to?')]")
     WebElement cityElement;
 
@@ -43,12 +44,13 @@ public class WebStaySearchPage extends WebBasePage implements StaySearchPage {
     @FindBy(id = "search_button")
     WebElement searchButton;
 
-    public void enterCity(String city){
+    public void enterCity(String city) {
         cityElement.click();
         cityInput.sendKeys(city);
         cityList.getFirst().click();
     }
-    public void enterFromDate(String date)  {
+
+    public void enterFromDate(String date) {
         calendarElement.click();
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
@@ -60,16 +62,16 @@ public class WebStaySearchPage extends WebBasePage implements StaySearchPage {
         String dateValue = getFormattedDate("dd", date, "dd/MM/yyyy");
         WebElement dateElement = driver.findElement(By.xpath(String.format(XPATH_DATE_VALUE, dateValue)));
         dateElement.click();
-        //calendarDoneButton.click();
+
     }
-    public void enterToDate(String date)  {
+
+    public void enterToDate(String date) {
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
         while (!expMonthYear.equalsIgnoreCase(actMonthYear)) {
             nextButton.click();
             actMonthYear = monthAndYear.getText();
         }
-        //pause(2000);
         String dateValue = getFormattedDate("dd", date, "dd/MM/yyyy");
         WebElement dateElement = driver.findElement(By.xpath(String.format(XPATH_DATE_VALUE, dateValue)));
         dateElement.click();
@@ -78,7 +80,8 @@ public class WebStaySearchPage extends WebBasePage implements StaySearchPage {
 
     public void enterNoOfTravellers(String noOfAdults) {
         travellersButton.click();
-        for(int i=0;i<Integer.parseInt(noOfAdults)-2;i++) {
+        for (int i = 0; i < Integer.parseInt(noOfAdults) - 2; i++) {
+            waitForElementClickable(adultsButton);
             adultsButton.click();
         }
         travellersDoneButton.click();
@@ -87,14 +90,8 @@ public class WebStaySearchPage extends WebBasePage implements StaySearchPage {
     public void clickOnSearchButton() {
         searchButton.click();
     }
-    public boolean isStaySearchPageDisplayed(){
+
+    public boolean isStaySearchPageDisplayed() {
         return searchButton.isDisplayed();
     }
-
-    @Override
-    public boolean isCarReviewPageDisplayed() {
-        return false;
-    }
-
-
 }

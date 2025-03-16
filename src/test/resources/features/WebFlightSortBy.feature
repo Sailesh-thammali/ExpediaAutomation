@@ -1,4 +1,4 @@
-@android @web
+@web
 Feature:Validate Sorting Functionality In Flights
 
   Background:

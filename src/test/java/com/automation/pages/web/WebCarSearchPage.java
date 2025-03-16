@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
+
     @FindBy(xpath = "//button[contains(@aria-label,'Pick-up')]")
     WebElement fromElement;
 
@@ -76,6 +77,7 @@ public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
         dateElement.click();
 
     }
+
     public void enterToDate(String date) {
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
@@ -105,6 +107,4 @@ public class WebCarSearchPage extends WebBasePage implements CarSearchPage {
     public boolean isCarSearchPageDisplayed() {
         return searchButton.isDisplayed();
     }
-
-
 }

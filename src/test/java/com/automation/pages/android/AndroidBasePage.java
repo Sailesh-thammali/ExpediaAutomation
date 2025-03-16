@@ -1,7 +1,6 @@
 package com.automation.pages.android;
 
 import com.automation.utils.DriverManager;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
@@ -23,7 +22,6 @@ import static org.openqa.selenium.interactions.PointerInput.Origin.viewport;
 import static org.openqa.selenium.support.PageFactory.*;
 
 public class AndroidBasePage {
-
 
     AndroidDriver driver;
     WebDriverWait wait;

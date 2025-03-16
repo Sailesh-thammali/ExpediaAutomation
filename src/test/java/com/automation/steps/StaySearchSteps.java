@@ -13,7 +13,7 @@ public class StaySearchSteps extends BaseSteps {
     }
 
     @When("user enters {string},{string},{string} and {string}")
-    public void userEntersAnd(String arg0, String arg1, String arg2, String arg3) {
+    public void userEntersAnd(String cityName, String formDate, String toDate, String noOfTravellers) {
         staySearchPage.enterCity(ConfigReader.getConfigValue("stay.city"));
         staySearchPage.enterFromDate(ConfigReader.getConfigValue("stay.from.date"));
         staySearchPage.enterToDate(ConfigReader.getConfigValue("stay.to.date"));

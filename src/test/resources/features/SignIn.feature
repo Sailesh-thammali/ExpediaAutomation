@@ -1,5 +1,5 @@
 @android @web
-Feature: Validate on sign in functionality with valid and invalid credentials
+Feature: Validate Sign In With Valid And Invalid Credentials
 
   Background:
     Given user open application

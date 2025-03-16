@@ -1,12 +1,11 @@
 package com.automation.utils;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.sql.Driver;
-import java.time.Duration;
 
 import static java.lang.System.getProperty;
 import static java.time.Duration.ofSeconds;
@@ -37,5 +36,9 @@ public class DriverManager {
 
     public static WebDriver getDriver() {
         return driver;
+    }
+
+    public static byte[] takeScreenshotasBytes() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

@@ -13,16 +13,16 @@ public class WebCarListingPage extends WebBasePage implements CarListingPage {
     @FindBy(xpath = "//button[@data-auto-id='bookButton']")
     List<WebElement> carSelectButton;
 
-    @FindBy(xpath = "//div[@data-auto-id=\"txtPassengers\"]")
+    @FindBy(xpath = "//div[@data-auto-id='txtPassengers']")
     List<WebElement> noOfPassengers;
 
-    @FindBy(xpath = "//div[@for=\"passengers-99\"]")
+    @FindBy(xpath = "//div[@for='passengers-99']")
     WebElement passengersButton;
 
-    @FindBy(xpath = "(//button[@aria-label=\"Sort by Price\"])[2]")
+    @FindBy(xpath = "(//button[@aria-label='Sort by Price'])[2]")
     WebElement sortByPriceButton;
 
-    @FindBy(xpath = "//div[@class=\"ct-price-container\"]")
+    @FindBy(xpath = "//div[@class='ct-price-container']")
     List<WebElement> carPrices;
 
     @FindBy(xpath = "//div[@data-auto-id='pickUpLocationReadOnly']")
@@ -50,6 +50,7 @@ public class WebCarListingPage extends WebBasePage implements CarListingPage {
         System.out.println("Car Type:- " + vehicleDetails.getFirst().getText());
         System.out.println("Car Name:- " + vehicleDetails.getLast().getText());
         System.out.println("Car Fee:- " + vehiclePrice.getText());
+        takeScreenshot("WebCarRental");
 
     }
 

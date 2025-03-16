@@ -74,7 +74,7 @@ public class HomeSteps extends BaseSteps {
     }
 
     @When("user selects {string} and {string}")
-    public void userSelectsAnd(String arg0, String arg1) {
+    public void userSelectsAnd(String region, String language) {
         homePage.selectRegionOption(ConfigReader.getConfigValue("region"));
         homePage.selectLanguageOption(ConfigReader.getConfigValue("language"));
     }

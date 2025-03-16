@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class CarSearchSteps extends BaseSteps {
+
     @Then("verify user is on car search page")
     public void verifyUserIsOnCarSearchPage() {
         Assert.assertTrue(carSearchPage.isCarSearchPageDisplayed());
@@ -14,7 +15,7 @@ public class CarSearchSteps extends BaseSteps {
     }
 
     @When("user enters {string},{string},{string},{string},{string} and {string}")
-    public void userEntersAnd(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5) {
+    public void userEntersAnd(String formCity, String toCity, String fromDate, String toDate, String pickupTime, String dropOffTime) {
         carSearchPage.enterFromCity(ConfigReader.getConfigValue("car.from.city"));
         carSearchPage.enterToCity(ConfigReader.getConfigValue("car.to.city"));
         carSearchPage.enterFromDate(ConfigReader.getConfigValue("car.from.date"));

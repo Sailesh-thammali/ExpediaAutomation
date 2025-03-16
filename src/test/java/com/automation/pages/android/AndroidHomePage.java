@@ -1,7 +1,6 @@
 package com.automation.pages.android;
 
 import com.automation.interfaces.HomePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,25 +8,25 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.Button")
     WebElement getStartedBtn;
 
-    @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"Cancel\"]")
+    @FindBy(xpath = "//android.widget.ImageView[@content-desc='Cancel']")
     WebElement cancelBtn;
 
     @FindBy(xpath = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button")
     WebElement cancelBtn2;
 
-    @FindBy(xpath = "//android.widget.Button[@resource-id=\"com.android.permissioncontroller:id/permission_deny_button\"]")
+    @FindBy(xpath = "//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_deny_button']")
     WebElement denyBtn;
 
-    @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Sign In Link\"]")
+    @FindBy(xpath = "//android.widget.TextView[@content-desc='Sign In Link']")
     WebElement signInBtn;
 
-    @FindBy(xpath = "//android.widget.TextView[@text=\"Flights\"]")
+    @FindBy(xpath = "//android.widget.TextView[@text='Flights']")
     WebElement flightIcon;
 
     @FindBy(xpath = "//android.widget.ScrollView/android.view.View[1]//android.widget.TextView[@text]")
     WebElement text;
 
-    @FindBy(xpath = "(//android.widget.ImageView[@resource-id=\"com.expedia.bookings:id/tab_icon\"])[5]")
+    @FindBy(xpath = "(//android.widget.ImageView[@resource-id='com.expedia.bookings:id/tab_icon'])[5]")
     WebElement accountIcon;
 
     @FindBy(xpath = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]")
@@ -42,36 +41,34 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button")
     WebElement signIn;
 
-    @FindBy(xpath = "//android.widget.TextView[@text=\"Stays\"]")
+    @FindBy(xpath = "//android.widget.TextView[@text='Stays']")
     WebElement stayBtn;
 
     @FindBy(xpath = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.Button")
     WebElement settingsOption;
 
-    @FindBy(xpath = "//android.widget.TextView[@text=\"Region\"]")
+    @FindBy(xpath = "//android.widget.TextView[@text='Region']")
     WebElement regionOption;
 
-    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"com.expedia.bookings:id/country_name_text_view\" and @text]")
+    @FindBy(xpath = "//android.widget.TextView[@resource-id='com.expedia.bookings:id/country_name_text_view' and @text]")
     WebElement selectRegion;
 
-    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"com.expedia.bookings:id/country_name_text_view\" and @text=\"United Kingdom\"]")
+    @FindBy(xpath = "//android.widget.TextView[@resource-id='com.expedia.bookings:id/country_name_text_view' and @text='United Kingdom']")
     WebElement selectRegionOption;
 
-    @FindBy(xpath = "//android.widget.Button[@resource-id=\"android:id/button1\"]")
+    @FindBy(xpath = "//android.widget.Button[@resource-id='android:id/button1']")
     WebElement okBtn;
 
 
     @Override
     public void openApplication() {
-
-      /*  getStartedBtn.click();
-
+        getStartedBtn.click();
         if (isDisplayed(denyBtn)) {
             denyBtn.click();
         }
         cancelBtn.click();
         cancelBtn2.click();
-        denyBtn.click();*/
+        denyBtn.click();
 
     }
 
@@ -124,11 +121,6 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     }
 
     @Override
-    public void clickOnCarsOption() {
-
-    }
-
-    @Override
     public void clickOnStaysOption() {
         stayBtn.click();
     }
@@ -163,16 +155,6 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
         selectRegionOption.click();
         okBtn.click();
 
-
-    }
-
-    @Override
-    public void selectLanguageOption(String language) {
-
-    }
-
-    @Override
-    public void clickOnSaveButton() {
 
     }
 

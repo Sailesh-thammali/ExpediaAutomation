@@ -1,0 +1,2473 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Feb 28, 2025 02:42:52 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Feb 28, 2025 02:42:52 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Feb 28, 2025 03:04:04 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>12</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>12</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>24</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>213</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Validate Flight Booking Functionality":46.576,"Validate Flight Searching Functionality":33.282,"Validate Language Filter Functionality":21.002,"Validate Sign In With Valid And Invalid Credentials":480.426,"Validate Sign In And Sign Out Functionality":84.517,"Validate Stay Booking Functionality":83.787,"Validate Car Rental Functionality":27.931,"Validate Car Rental Sort And Filter Functionality":53.064,"Validate Filter Functionality In Flights":65.706,"Validate Sorting Functionality In Flights":94.797,"Validate Stay Booking Functionality With Information":280.419,"Validate Filter Functionality In Stay Booking":0
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@android</td>
+<td>17</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@web</td>
+<td>28</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 12,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 24,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 213,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@android</a><a class="dropdown-item" href="#">@web</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Flight Booking Functionality</p>
+            <p class="text-sm">
+              <span>2:42:53 pm</span> / <span>00:00:46:576</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Flight Booking Functionality</h5>
+<span class='badge badge-success'>02.28.2025 2:42:53 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:43:39 pm</span>
+<span class='badge badge-default'>00:00:46:576</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify user can book flights</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnFlightsOption()">
+                <span>When user clicks on flights option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.verifyUserIsOnFlightSearchPage()">
+                <span>Then verify user is on flight search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.userClicksOnOneWayOption()">
+                <span>When user clicks on one-way option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.entersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And enters "from.city","to.city","date" and "travellers"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.clicksOnSearchButton()">
+                <span>And clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserIsOnFlightListingPage()">
+                <span>Then verify user is on flight listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.userClicksOnFirstFlight()">
+                <span>When user clicks on first flight</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.ReviewSteps.verifyUserIsOnReviewPage()">
+                <span>Then verify user is on review page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.ReviewSteps.printFlightDetailsAndPrice()">
+                <span>And print flight details and price</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Flight Searching Functionality</p>
+            <p class="text-sm">
+              <span>2:43:39 pm</span> / <span>00:00:33:282</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Flight Searching Functionality</h5>
+<span class='badge badge-success'>02.28.2025 2:43:39 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:44:13 pm</span>
+<span class='badge badge-default'>00:00:33:282</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>Verify user can search flights with same source and destination</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="18"><span class="badge log pass-bg mr-2">Pass</span>Verify user can search flights with same source and destination</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on flights option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on one-way option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters "Mumbai" and "Mumbai"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Verify user can search flights with same source and destination</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on flights option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on flight search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on one-way option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enters "Delhi" and "Delhi"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="40"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Language Filter Functionality</p>
+            <p class="text-sm">
+              <span>2:44:13 pm</span> / <span>00:00:21:002</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Language Filter Functionality</h5>
+<span class='badge badge-success'>02.28.2025 2:44:13 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:44:34 pm</span>
+<span class='badge badge-default'>00:00:21:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="41"><span class="badge log pass-bg mr-2">Pass</span>Verify user can change region and language</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnRegionButton()">
+                <span>When user clicks on region button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyRegionOptionsAreDisplayed()">
+                <span>Then verify region options are displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userSelectsAnd(java.lang.String,java.lang.String)">
+                <span>When user selects "region" and "language"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.clicksOnSaveButton()">
+                <span>And clicks on save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserSelectedLanguageIsDisplayed()">
+                <span>Then verify user selected language is displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="51"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Sign In With Valid And Invalid Credentials</p>
+            <p class="text-sm">
+              <span>2:44:34 pm</span> / <span>00:08:00:426</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Sign In With Valid And Invalid Credentials</h5>
+<span class='badge badge-success'>02.28.2025 2:44:34 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:52:34 pm</span>
+<span class='badge badge-default'>00:08:00:426</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=51</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="52"><span class="badge log pass-bg mr-2">Pass</span>Successful sign in with valid credentials</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClickOnSignInButton()">
+                <span>When user click on sign in button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.SignInSteps.verifyUserIsOnSignInPage()">
+                <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.SignInSteps.userEnterAndClicksOnSignIn(java.lang.String,java.lang.String)">
+                <span>When user enter "user.email","user.password" and clicks on signIn</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserSignedInSuccessfully()">
+                <span>Then verify user signed in successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="61"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid email</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="62"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid email</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enter "saileshcse0@gmail.com"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on continue button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed "error.email.msg"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid email</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enter "sailesh*@gmail.com"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on continue button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed "error.email.msg"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="82"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid email</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enter "exex@gmail.com"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on continue button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed "error.email.msg"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="92"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid password</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="93"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enter valid email "user.email" and invalid password "Test@123"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed "error.password.msg"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="102"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enter valid email "user.email" and invalid password "12345"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed "error.password.msg"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="111"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enter valid email "user.email" and invalid password "yoyo@2222"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed "error.password.msg"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="120"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful sign in with invalid password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enter valid email "user.email" and invalid password "Tester@291"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed "error.password.msg"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="129"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Sign In And Sign Out Functionality</p>
+            <p class="text-sm">
+              <span>2:52:34 pm</span> / <span>00:01:24:517</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Sign In And Sign Out Functionality</h5>
+<span class='badge badge-success'>02.28.2025 2:52:34 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:53:59 pm</span>
+<span class='badge badge-default'>00:01:24:517</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=129</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="130"><span class="badge log pass-bg mr-2">Pass</span>Verify User Can Sign In and sign out</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClickOnSignInButton()">
+                <span>When user click on sign in button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.SignInSteps.verifyUserIsOnSignInPage()">
+                <span>Then verify user is on sign in page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.SignInSteps.userEnterAndClicksOnSignIn(java.lang.String,java.lang.String)">
+                <span>When user enter "user.email","user.password" and clicks on signIn</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserSignedInSuccessfully()">
+                <span>Then verify user signed in successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnAccountIcon()">
+                <span>When user clicks on account icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnAccountPage()">
+                <span>Then verify user is on account page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClickOnSignOutButton()">
+                <span>When user click on sign out button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserSignedOutSuccessfully()">
+                <span>Then verify user signed out successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="143"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Stay Booking Functionality</p>
+            <p class="text-sm">
+              <span>2:53:59 pm</span> / <span>00:01:23:787</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Stay Booking Functionality</h5>
+<span class='badge badge-success'>02.28.2025 2:53:59 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:55:22 pm</span>
+<span class='badge badge-default'>00:01:23:787</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=143</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="144"><span class="badge log pass-bg mr-2">Pass</span>Verify user can book stays</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnStaysOption()">
+                <span>When user clicks on stays option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.StaySearchSteps.verifyUserIsOnStaySearchPage()">
+                <span>Then verify user is on stay search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.StaySearchSteps.userEntersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>When user enters "stay.city","stay.from.date","stay.to.date" and "stay.travellers"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.clicksOnSearchButton()">
+                <span>And clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.StayListingSteps.verifyUserIsOnStayListingPage()">
+                <span>Then verify user is on stay listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.StayListingSteps.userClicksOnFirstStay()">
+                <span>When user clicks on first stay</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.StayListingSteps.clicksOnReserveButtonAndPayAtPropertyOption()">
+                <span>And clicks on reserve button and pay at property option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.StayListingSteps.verifyUserIsOnStayReviewPage()">
+                <span>Then verify user is on stay review page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.StayListingSteps.printStayDetails()">
+                <span>And print stay details</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="158"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Car Rental Functionality</p>
+            <p class="text-sm">
+              <span>2:55:22 pm</span> / <span>00:00:27:931</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Car Rental Functionality</h5>
+<span class='badge badge-success'>02.28.2025 2:55:22 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:55:50 pm</span>
+<span class='badge badge-default'>00:00:27:931</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=158</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="159"><span class="badge log pass-bg mr-2">Pass</span>Verify user can rent cars</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnCarsOption()">
+                <span>When user clicks on cars option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.verifyUserIsOnCarSearchPage()">
+                <span>Then verify user is on car search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.userEntersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>When user enters "pickup.place","dropoff.place","pickup.date","dropOff.date","pickup.time" and "dropoff.time"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.userClicksOnSearchButton()">
+                <span>And user clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.verifyUserIsOnCarListingPage()">
+                <span>Then verify user is on car listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.userClickOnFirstCar()">
+                <span>When user click on first car</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.verifyUserIsOnCarReviewPage()">
+                <span>Then verify user is on car review page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.printCarRentalDetails()">
+                <span>And print car rental details</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="172"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Car Rental Sort And Filter Functionality</p>
+            <p class="text-sm">
+              <span>2:55:50 pm</span> / <span>00:00:53:064</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Car Rental Sort And Filter Functionality</h5>
+<span class='badge badge-success'>02.28.2025 2:55:50 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:56:43 pm</span>
+<span class='badge badge-default'>00:00:53:064</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=172</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="173"><span class="badge log pass-bg mr-2">Pass</span>Verify user can get car details as per number of passengers filter</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnCarsOption()">
+                <span>When user clicks on cars option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.verifyUserIsOnCarSearchPage()">
+                <span>Then verify user is on car search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.userEntersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>When user enters "pickup.place","dropoff.place","pickup.date","dropOff.date","pickup.time" and "dropoff.time"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.userClicksOnSearchButton()">
+                <span>And user clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.verifyUserIsOnCarListingPage()">
+                <span>Then verify user is on car listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.userSelectsTheNumberOfPassengers(java.lang.String)">
+                <span>When user selects the number of passengers "7"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.verifyUserGetsAllCarsAsSelectedNumberOfPassengers()">
+                <span>Then verify user gets all cars as selected number of passengers</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="185"><span class="badge log pass-bg mr-2">Pass</span>Verify user can get all car prices from low to high</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnCarsOption()">
+                <span>When user clicks on cars option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.verifyUserIsOnCarSearchPage()">
+                <span>Then verify user is on car search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.userEntersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>When user enters "pickup.place","dropoff.place","pickup.date","dropOff.date","pickup.time" and "dropoff.time"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarSearchSteps.userClicksOnSearchButton()">
+                <span>And user clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.verifyUserIsOnCarListingPage()">
+                <span>Then verify user is on car listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.userClicksOnPriceSortByLowToHigh()">
+                <span>When user clicks on price sort by low to high</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.CarListingSteps.verifyUserCanGetCarPricesInLowToHigh()">
+                <span>Then verify user can get car prices in low to high</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="197"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Filter Functionality In Flights</p>
+            <p class="text-sm">
+              <span>2:56:43 pm</span> / <span>00:01:05:706</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Filter Functionality In Flights</h5>
+<span class='badge badge-success'>02.28.2025 2:56:43 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:57:49 pm</span>
+<span class='badge badge-default'>00:01:05:706</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=197</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="198"><span class="badge log pass-bg mr-2">Pass</span>Verify user can get flight details as per flight company filter</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnFlightsOption()">
+                <span>When user clicks on flights option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.verifyUserIsOnFlightSearchPage()">
+                <span>Then verify user is on flight search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.userClicksOnOneWayOption()">
+                <span>When user clicks on one-way option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.entersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And enters "from.city","to.city","date" and "travellers"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.clicksOnSearchButton()">
+                <span>And clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserIsOnFlightListingPage()">
+                <span>Then verify user is on flight listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.userSelectsTheFlightCompany(java.lang.String)">
+                <span>When user selects the flight company "Air India"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserCanGetAllFlightsAsSelectedCompany()">
+                <span>Then verify user can get all flights as selected company</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="211"><span class="badge log pass-bg mr-2">Pass</span>Verify user can get flight details as per flight stops filter</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnFlightsOption()">
+                <span>When user clicks on flights option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.verifyUserIsOnFlightSearchPage()">
+                <span>Then verify user is on flight search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.userClicksOnOneWayOption()">
+                <span>When user clicks on one-way option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.entersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And enters "from.city","to.city","date" and "travellers"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.clicksOnSearchButton()">
+                <span>And clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserIsOnFlightListingPage()">
+                <span>Then verify user is on flight listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.userSelectsTheFlightStops(java.lang.String)">
+                <span>When user selects the flight stops "Direct"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserCanGetAllFlightsAsSelectedStops()">
+                <span>Then verify user can get all flights as selected stops</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="224"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Sorting Functionality In Flights</p>
+            <p class="text-sm">
+              <span>2:57:49 pm</span> / <span>00:01:34:797</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Sorting Functionality In Flights</h5>
+<span class='badge badge-success'>02.28.2025 2:57:49 pm</span>
+<span class='badge badge-danger'>02.28.2025 2:59:24 pm</span>
+<span class='badge badge-default'>00:01:34:797</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=224</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="225"><span class="badge log pass-bg mr-2">Pass</span>Verify user can get all prices from high to low</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnFlightsOption()">
+                <span>When user clicks on flights option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.verifyUserIsOnFlightSearchPage()">
+                <span>Then verify user is on flight search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.userClicksOnOneWayOption()">
+                <span>When user clicks on one-way option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.entersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And enters "from.city","to.city","date" and "travellers"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.clicksOnSearchButton()">
+                <span>And clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserIsOnFlightListingPage()">
+                <span>Then verify user is on flight listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.userClicksOnPriceHighToLow()">
+                <span>When user clicks on price high to low</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserCanGetPricesInHighToLow()">
+                <span>Then verify user can get prices in high to low</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="238"><span class="badge log pass-bg mr-2">Pass</span>Verify user can get all prices from low to high</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userOpenApplication()">
+                <span>Given user open application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.verifyUserIsOnHomePage()">
+                <span>Then verify user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.HomeSteps.userClicksOnFlightsOption()">
+                <span>When user clicks on flights option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.verifyUserIsOnFlightSearchPage()">
+                <span>Then verify user is on flight search page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.userClicksOnOneWayOption()">
+                <span>When user clicks on one-way option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.entersAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And enters "from.city","to.city","date" and "travellers"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightSearchSteps.clicksOnSearchButton()">
+                <span>And clicks on search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserIsOnFlightListingPage()">
+                <span>Then verify user is on flight listing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.userClicksOnPriceLowToHigh()">
+                <span>When user clicks on price low to high</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automation.steps.FlightListingSteps.verifyUserCanGetPricesInLowToHigh()">
+                <span>Then verify user can get prices in low to high</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="251"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Stay Booking Functionality With Information</p>
+            <p class="text-sm">
+              <span>2:59:24 pm</span> / <span>00:04:40:419</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Stay Booking Functionality With Information</h5>
+<span class='badge badge-success'>02.28.2025 2:59:24 pm</span>
+<span class='badge badge-danger'>02.28.2025 3:04:04 pm</span>
+<span class='badge badge-default'>00:04:40:419</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=251</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="252"><span class="badge log pass-bg mr-2">Pass</span>Verify user can book with invalid details</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="253"><span class="badge log pass-bg mr-2">Pass</span>Verify user can book with invalid details</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on stays option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enters "stay.city","stay.from.date","stay.to.date" and "stay.travellers"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay listing page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on first stay</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on reserve button and pay at property option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay review page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user fills "John","Greesham" and "johnmail"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on complete booking button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="269"><span class="badge log pass-bg mr-2">Pass</span>Verify user can book with invalid details</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on stays option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enters "stay.city","stay.from.date","stay.to.date" and "stay.travellers"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay listing page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on first stay</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on reserve button and pay at property option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay review page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user fills "1234","Greesham" and "john@gmail.com"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on complete booking button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="285"><span class="badge log pass-bg mr-2">Pass</span>Verify user can book with invalid details</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user open application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on home page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on stays option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay search page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user enters "stay.city","stay.from.date","stay.to.date" and "stay.travellers"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on search button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay listing page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on first stay</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on reserve button and pay at property option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify user is on stay review page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user fills "John","245G" and "john@gmail.com"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And clicks on complete booking button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify error message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="301"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validate Filter Functionality In Stay Booking</p>
+            <p class="text-sm">
+              <span>3:04:04 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Validate Filter Functionality In Stay Booking</h5>
+<span class='badge badge-success'>02.28.2025 3:04:04 pm</span>
+<span class='badge badge-danger'>02.28.2025 3:04:04 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=301</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>17</span>
+</span>
+<p class="name">@android</p>
+<p class="duration text-sm">17 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@android</h4>
+<span status="pass" class='badge log pass-bg'>17 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:42:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify user can book flights</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Booking Functionality.Verify user can book flights</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='17'>Verify user can search flights with same source and destination</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Searching Functionality.Verify user can search flights with same source and destination</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='18'>Verify user can search flights with same source and destination</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Searching Functionality.Verify user can search flights with same source and destination</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='29'>Verify user can search flights with same source and destination</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Searching Functionality.Verify user can search flights with same source and destination</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:44:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='41'>Verify user can change region and language</a>
+<div class="">
+<span class="badge badge-default">Validate Language Filter Functionality.Verify user can change region and language</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:44:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='52'>Successful sign in with valid credentials</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Successful sign in with valid credentials</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:45:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='61'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:45:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='62'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='72'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='82'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='92'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='93'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:49:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='102'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:50:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='111'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:52:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='120'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:52:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='129' id='130'>Verify User Can Sign In and sign out</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In And Sign Out Functionality.Verify User Can Sign In and sign out</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:53:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='143' id='144'>Verify user can book stays</a>
+<div class="">
+<span class="badge badge-default">Validate Stay Booking Functionality.Verify user can book stays</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>28</span>
+</span>
+<p class="name">@web</p>
+<p class="duration text-sm">28 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@web</h4>
+<span status="pass" class='badge log pass-bg'>28 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:42:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify user can book flights</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Booking Functionality.Verify user can book flights</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='17'>Verify user can search flights with same source and destination</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Searching Functionality.Verify user can search flights with same source and destination</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='18'>Verify user can search flights with same source and destination</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Searching Functionality.Verify user can search flights with same source and destination</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='29'>Verify user can search flights with same source and destination</a>
+<div class="">
+<span class="badge badge-default">Validate Flight Searching Functionality.Verify user can search flights with same source and destination</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:44:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='41'>Verify user can change region and language</a>
+<div class="">
+<span class="badge badge-default">Validate Language Filter Functionality.Verify user can change region and language</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:44:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='52'>Successful sign in with valid credentials</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Successful sign in with valid credentials</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:45:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='61'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:45:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='62'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='72'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='82'>Unsuccessful sign in with invalid email</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid email</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='92'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:47:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='93'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:49:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='102'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:50:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='111'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:52:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='120'>Unsuccessful sign in with invalid password</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In With Valid And Invalid Credentials.Unsuccessful sign in with invalid password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:52:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='129' id='130'>Verify User Can Sign In and sign out</a>
+<div class="">
+<span class="badge badge-default">Validate Sign In And Sign Out Functionality.Verify User Can Sign In and sign out</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:53:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='143' id='144'>Verify user can book stays</a>
+<div class="">
+<span class="badge badge-default">Validate Stay Booking Functionality.Verify user can book stays</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:55:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='158' id='159'>Verify user can rent cars</a>
+<div class="">
+<span class="badge badge-default">Validate Car Rental Functionality.Verify user can rent cars</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:55:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='172' id='173'>Verify user can get car details as per number of passengers filter</a>
+<div class="">
+<span class="badge badge-default">Validate Car Rental Sort And Filter Functionality.Verify user can get car details as per number of passengers filter</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:56:16 pm</td>
+<td>
+<a href="#" class="linked" test-id='172' id='185'>Verify user can get all car prices from low to high</a>
+<div class="">
+<span class="badge badge-default">Validate Car Rental Sort And Filter Functionality.Verify user can get all car prices from low to high</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:56:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='197' id='198'>Verify user can get flight details as per flight company filter</a>
+<div class="">
+<span class="badge badge-default">Validate Filter Functionality In Flights.Verify user can get flight details as per flight company filter</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:57:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='197' id='211'>Verify user can get flight details as per flight stops filter</a>
+<div class="">
+<span class="badge badge-default">Validate Filter Functionality In Flights.Verify user can get flight details as per flight stops filter</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:57:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='224' id='225'>Verify user can get all prices from high to low</a>
+<div class="">
+<span class="badge badge-default">Validate Sorting Functionality In Flights.Verify user can get all prices from high to low</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:58:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='224' id='238'>Verify user can get all prices from low to high</a>
+<div class="">
+<span class="badge badge-default">Validate Sorting Functionality In Flights.Verify user can get all prices from low to high</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:59:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='251' id='252'>Verify user can book with invalid details</a>
+<div class="">
+<span class="badge badge-default">Validate Stay Booking Functionality With Information.Verify user can book with invalid details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:59:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='251' id='253'>Verify user can book with invalid details</a>
+<div class="">
+<span class="badge badge-default">Validate Stay Booking Functionality With Information.Verify user can book with invalid details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:01:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='251' id='269'>Verify user can book with invalid details</a>
+<div class="">
+<span class="badge badge-default">Validate Stay Booking Functionality With Information.Verify user can book with invalid details</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:02:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='251' id='285'>Verify user can book with invalid details</a>
+<div class="">
+<span class="badge badge-default">Validate Stay Booking Functionality With Information.Verify user can book with invalid details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

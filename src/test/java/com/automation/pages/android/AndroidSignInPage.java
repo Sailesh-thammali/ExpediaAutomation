@@ -23,10 +23,10 @@ public class AndroidSignInPage extends AndroidBasePage implements SignInPage {
 
     @FindBy(xpath = "//android.widget.ScrollView/android.view.View[5]/android.view.View/android.widget.Button")
     WebElement signInButton;
-    @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"Cancel\"]")
+    @FindBy(xpath = "//android.widget.ImageView[@content-desc='Cancel']")
     WebElement cancelBtn;
 
-    @FindBy(xpath = "//android.widget.TextView[@content-desc=\"System error\"]")
+    @FindBy(xpath = "//android.widget.TextView[@content-desc='System error']")
     WebElement errorMsg;
 
 

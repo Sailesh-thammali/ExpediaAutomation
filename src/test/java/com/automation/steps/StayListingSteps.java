@@ -32,4 +32,29 @@ public class StayListingSteps extends BaseSteps {
         stayListingPage.printStayDetails();
         stayListingPage.printPriceDetails();
     }
+
+    @When("user fills {string},{string} and {string}")
+    public void userFillsAnd(String firstname, String lastname, String email) {
+        stayListingPage.fillDetails(firstname, lastname, email);
+    }
+
+    @And("clicks on complete booking button")
+    public void clicksOnCompleteBookingButton() {
+        stayListingPage.clickOnCompleteBookingButton();
+    }
+
+    @Then("verify error message is displayed")
+    public void verifyErrorMessageIsDisplayed() {
+        Assert.assertTrue(stayListingPage.isErrorMessageDisplayed());
+    }
+
+    @When("user selects {string}")
+    public void userSelects(String filterName) {
+        stayListingPage.clickOnFilterOption(filterName);
+    }
+
+    @Then("verify hotels with only {string} is displayed")
+    public void verifyHotelsWithOnlyIsDisplayed(String filterName) {
+        Assert.assertTrue(stayListingPage.isFilterOptionDisplayed(filterName));
+    }
 }

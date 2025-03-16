@@ -1,4 +1,5 @@
 package com.automation.pages.web;
+
 import com.automation.utils.DriverManager;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -42,6 +43,7 @@ public class WebBasePage {
             setImplicitWait(60);
         }
     }
+
     public void waitForElementVisible(WebElement ele) {
         wait.until(ExpectedConditions.visibilityOf(ele));
     }
@@ -77,23 +79,20 @@ public class WebBasePage {
         driver.manage().timeouts().implicitlyWait(ofSeconds(sec));
     }
 
-    public void switchToNewWindow(){
+    public void switchToNewWindow() {
         String currentWindow = driver.getWindowHandle();
         Set<String> allWindow = driver.getWindowHandles();
-        for(String window : allWindow){
-            if(!window.equals(currentWindow)){
+        for (String window : allWindow) {
+            if (!window.equals(currentWindow)) {
                 driver.switchTo().window(window);
             }
         }
     }
-    public void switchToCurrentWindow(){
-        String currentWindow=driver.getWindowHandle();
-        driver.switchTo().window(currentWindow);
-    }
-    public void takeScreenshot(String filename)  {
+
+    public void takeScreenshot(String filename) {
         File src = ((TakesScreenshot) driver).getScreenshotAs(FILE);
         try {
-            copyFile(src, new File("src/test/resources/screenshots/"+filename+".png"));
+            copyFile(src, new File("src/test/resources/screenshots/" + filename + ".png"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

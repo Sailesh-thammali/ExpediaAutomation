@@ -5,22 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AndroidFlightListingPage extends AndroidBasePage implements FlightListingPage {
-    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"com.expedia.bookings:id/uds_button_label\"]")
+    @FindBy(xpath = "//android.widget.TextView[@resource-id='com.expedia.bookings:id/uds_button_label']")
     WebElement filterBtn;
 
-    @FindBy(xpath = "(//android.view.ViewGroup[@resource-id=\"com.expedia.bookings:id/standard_fare\"])[1]")
+    @FindBy(xpath = "(//android.view.ViewGroup[@resource-id='com.expedia.bookings:id/standard_fare'])[1]")
     WebElement flight;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Sort by Button Recommended\"]")
+    @FindBy(xpath = "//android.view.View[@content-desc='Sort by Button Recommended']")
     WebElement sortOptions;
 
-    @FindBy(xpath = "//android.widget.TextView[@text=\"Price (highest to lowest)\"]")
+    @FindBy(xpath = "//android.widget.TextView[@text='Price (highest to lowest)']")
     WebElement highToLowOption;
 
-    @FindBy(xpath = "//android.widget.TextView[@text=\"Price (lowest to highest)\"]")
+    @FindBy(xpath = "//android.widget.TextView[@text='Price (lowest to highest)']")
     WebElement lowToHighOption;
 
-    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"buttonLabel\"]")
+    @FindBy(xpath = "//android.widget.TextView[@resource-id='buttonLabel']")
     WebElement doneBtn;
 
 
@@ -52,33 +52,4 @@ public class AndroidFlightListingPage extends AndroidBasePage implements FlightL
         doneBtn.click();
     }
 
-    @Override
-    public boolean isPriceLowToHigh() {
-        return false;
-    }
-
-    @Override
-    public boolean isPriceHighToLow() {
-        return false;
-    }
-
-    @Override
-    public void clickOnAirIndiaFilter() {
-
-    }
-
-    @Override
-    public boolean isSelectedFlightShown(String company) {
-        return false;
-    }
-
-    @Override
-    public void clickOnDirectFilter() {
-
-    }
-
-    @Override
-    public boolean isSelectedStopsShown(String stops) {
-        return false;
-    }
 }

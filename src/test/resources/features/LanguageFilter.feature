@@ -1,5 +1,5 @@
 @android @web
-Feature: Validate language filter functionality
+Feature: Validate Language Filter Functionality
 
   Scenario: Verify user can change region and language
     Given user open application

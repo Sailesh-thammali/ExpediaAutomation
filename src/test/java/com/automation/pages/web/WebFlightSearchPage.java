@@ -75,7 +75,7 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
         toCityList.getFirst().click();
     }
 
-    public void enterDate(String date)  {
+    public void enterDate(String date) {
         calendarElement.click();
         String expMonthYear = getFormattedDate("MMMM yyyy", date, "dd/MM/yyyy");
         String actMonthYear = monthAndYear.getText();
@@ -86,13 +86,14 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
 
         String dateValue = getFormattedDate("dd", date, "dd/MM/yyyy");
         WebElement dateElement = driver.findElement(By.xpath(String.format(XPATH_DATE_VALUE, dateValue)));
+        waitForElementClickable(dateElement);
         dateElement.click();
         calendarDoneButton.click();
     }
 
     public void enterNoOfTravellers(String noOfAdults) {
         travellersButton.click();
-        for(int i=0;i<Integer.parseInt(noOfAdults)-1;i++) {
+        for (int i = 0; i < Integer.parseInt(noOfAdults) - 1; i++) {
             waitForElementClickable(adultsButton);
             adultsButton.click();
         }
@@ -103,11 +104,13 @@ public class WebFlightSearchPage extends WebBasePage implements FlightSearchPage
         searchButton.click();
     }
 
-    public boolean isFlightSearchPageDisplayed(){
+    public boolean isFlightSearchPageDisplayed() {
         return searchButton.isDisplayed();
     }
-    public boolean isErrorDisplayed(){
+
+    public boolean isErrorDisplayed() {
         System.out.println(errorMessage.getText());
+        takeScreenshot("WebFlightErrorMessage");
         return errorMessage.isDisplayed();
     }
 }

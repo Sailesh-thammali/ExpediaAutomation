@@ -8,54 +8,54 @@ import org.openqa.selenium.support.FindBy;
 
 public class AndroidFlightSearchPage extends AndroidBasePage implements FlightSearchPage {
 
-    @FindBy(xpath = "//android.widget.TextView[@text=\"One-way\"]")
+    @FindBy(xpath = "//android.widget.TextView[@text='One-way']")
     WebElement oneWayOption;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Leaving from Button\"]")
+    @FindBy(xpath = "//android.view.View[@content-desc='Leaving from Button']")
     WebElement fromPlace;
 
-    @FindBy(xpath = "//android.widget.EditText[@resource-id=\"TeamTypeaheadInput\"]")
+    @FindBy(xpath = "//android.widget.EditText[@resource-id='TeamTypeaheadInput']")
     WebElement fromPlaceInput;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"EGDSActionListItem\"]/android.view.View/android.view.View")
+    @FindBy(xpath = "//android.view.View[@resource-id='EGDSActionListItem']/android.view.View/android.view.View")
     WebElement leavingFrom;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Going to Button\"]")
+    @FindBy(xpath = "//android.view.View[@content-desc='Going to Button']")
     WebElement toPlace;
 
-    @FindBy(xpath = "//android.widget.EditText[@resource-id=\"TeamTypeaheadInput\"]")
+    @FindBy(xpath = "//android.widget.EditText[@resource-id='TeamTypeaheadInput']")
     WebElement toPlaceInput;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"EGDSActionListItem\"]/android.widget.Button")
+    @FindBy(xpath = "//android.view.View[@resource-id='EGDSActionListItem']/android.widget.Button")
     WebElement goingTo;
 
-    @FindBy(xpath = "(//android.view.View[@resource-id=\"EGDSTextInputContainer\"])[3]")
+    @FindBy(xpath = "(//android.view.View[@resource-id='EGDSTextInputContainer'])[3]")
     WebElement dateBtn;
 
-    @FindBy(xpath = "(//android.view.View[@resource-id=\"Month\"])[1]//android.widget.TextView")
+    @FindBy(xpath = "(//android.view.View[@resource-id='Month'])[1]//android.widget.TextView")
     WebElement monthAndYear;
 
-    String XPATH_DATE_VALUE = "(//android.view.View[@resource-id=\"Day\"])[%s]/android.widget.Button";
+    String XPATH_DATE_VALUE = "(//android.view.View[@resource-id='Day'])[%s]/android.widget.Button";
 
-    @FindBy(xpath = "(//android.view.View[@resource-id=\"Month\"])")
+    @FindBy(xpath = "(//android.view.View[@resource-id='Month'])")
     WebElement calendar;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"DateSelector_FullCentralSheet_Button\"]/android.widget.Button")
+    @FindBy(xpath = "//android.view.View[@resource-id='DateSelector_FullCentralSheet_Button']/android.widget.Button")
     WebElement doneBtn;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"TravelerSelectorField\"]")
+    @FindBy(xpath = "//android.view.View[@resource-id='TravelerSelectorField']")
     WebElement travellerBtn;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"stepInputIncreaseButton\"]")
+    @FindBy(xpath = "//android.view.View[@resource-id='stepInputIncreaseButton']")
     WebElement adutlsButton;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"BasicTravelerSelectorDoneButton\"]/android.widget.Button")
+    @FindBy(xpath = "//android.view.View[@resource-id='BasicTravelerSelectorDoneButton']/android.widget.Button")
     WebElement doneBtn2;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"SearchButton\"]/android.widget.Button")
+    @FindBy(xpath = "//android.view.View[@resource-id='SearchButton']/android.widget.Button")
     WebElement searchBtn;
 
-    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"bannerHeading\"]")
+    @FindBy(xpath = "//android.widget.TextView[@resource-id='bannerHeading']")
     WebElement errorMsg;
 
 

@@ -13,6 +13,6 @@ public interface StaySearchPage {
 
     boolean isStaySearchPageDisplayed();
 
-    boolean isCarReviewPageDisplayed();
+
 
 }

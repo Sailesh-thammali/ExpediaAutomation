@@ -15,4 +15,13 @@ public interface StayListingPage {
 
     boolean isStayReviewPageDisplayed();
 
+    void fillDetails(String firstname, String lastname, String email);
+
+    void clickOnCompleteBookingButton();
+
+    boolean isErrorMessageDisplayed();
+
+    void clickOnFilterOption(String filterName);
+
+    boolean isFilterOptionDisplayed(String filterName);
 }

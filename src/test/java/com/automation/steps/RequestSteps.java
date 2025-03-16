@@ -7,7 +7,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.lang.reflect.Field;
@@ -68,7 +67,6 @@ public class RequestSteps {
         String content = RestAssuredUtils.getDataFromJsonFile(fileName);
         ObjectMapper objectMapper = new ObjectMapper();
         CreateTokenPojo pojo = objectMapper.readValue(content, CreateTokenPojo.class);
-
         Field field;
 
         field = CreateTokenPojo.class.getDeclaredField("username");
@@ -78,12 +76,12 @@ public class RequestSteps {
         field.setAccessible(true);
         field.set(pojo, password);
 
-        System.out.println(">>>>>>>>>>>Pojo: " + pojo);
-
+        System.out.println("Pojo: " + pojo);
 
         RestAssuredUtils.setBody(pojo);
 
     }
+
 
 
 }

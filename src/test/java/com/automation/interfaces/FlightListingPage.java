@@ -5,19 +5,35 @@ public interface FlightListingPage {
 
     boolean isFlightListingPageDisplayed();
 
-    void clickOnSortLowToHighOption();
+    default void clickOnSortLowToHighOption() {
 
-    void clickOnSortHighToLowOption();
+    }
 
-    boolean isPriceLowToHigh();
+    default void clickOnSortHighToLowOption() {
 
-    boolean isPriceHighToLow();
+    }
 
-    void clickOnAirIndiaFilter();
+    default boolean isPriceLowToHigh() {
+        return false;
+    }
 
-    boolean isSelectedFlightShown(String company);
+    default boolean isPriceHighToLow() {
+        return false;
+    }
 
-    void clickOnDirectFilter();
+    default void clickOnAirIndiaFilter() {
 
-    boolean isSelectedStopsShown(String stops);
+    }
+
+    default boolean isSelectedFlightShown(String company) {
+        return false;
+    }
+
+    default void clickOnDirectFilter() {
+
+    }
+
+    default boolean isSelectedStopsShown(String stops) {
+        return false;
+    }
 }

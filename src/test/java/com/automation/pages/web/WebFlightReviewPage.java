@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class WebFlightReviewPage extends WebBasePage implements ReviewPage {
+
     @FindBy(xpath = "//span[contains(text(),'Show details')]")
     WebElement showDetailsButton;
 
@@ -23,21 +24,18 @@ public class WebFlightReviewPage extends WebBasePage implements ReviewPage {
 
         String[] lines = flightInfoText.split("\n");
 
-        String departureTime = "";
         String departureLocation = "";
         String departureAirport = "";
         String duration = "";
         String flightName = "";
         String flightType = "";
         String flightClass = "";
-        String arrivalTime = "";
         String arrivalLocation = "";
         String arrivalAirport = "";
 
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i].trim();
             if (line.contains("Departure")) {
-                departureTime = lines[i + 1].trim();
                 departureLocation = lines[i + 2].trim();
                 departureAirport = lines[i + 3].trim();
             } else if (line.matches("\\d+h \\d+m flight")) {
@@ -49,7 +47,6 @@ public class WebFlightReviewPage extends WebBasePage implements ReviewPage {
             } else if (line.contains("Economy") || line.contains("Business") || line.contains("Premium")) {
                 flightClass = line.trim();
             } else if (line.contains("Arrival")) {
-                arrivalTime = lines[i + 1].trim();
                 arrivalLocation = lines[i + 2].trim();
                 arrivalAirport = lines[i + 3].trim();
             }

@@ -11,10 +11,10 @@ import java.util.List;
 
 public class WebFlightListingPage extends WebBasePage implements FlightListingPage {
 
-    @FindBy(xpath = "//div[contains(@data-test-id,\"offer-card\")]")
+    @FindBy(xpath = "//div[contains(@data-test-id,'offer-card')]")
     List<WebElement> flightsList;
 
-    @FindBy(xpath = "//button[contains(@stid,\"select-button\")]")
+    @FindBy(xpath = "//button[contains(@stid,'select-button')]")
     WebElement selectButton;
 
     @FindBy(xpath = "//a[text()='No thanks']")
@@ -38,7 +38,7 @@ public class WebFlightListingPage extends WebBasePage implements FlightListingPa
     @FindBy(xpath = "//input[@name='NUM_OF_STOPS']")
     WebElement directStopFilter;
 
-    @FindBy(xpath = "//span[@class=\"uitk-text uitk-type-300 uitk-type-medium uitk-text-positive-theme\"]")
+    @FindBy(xpath = "//span[@class='uitk-text uitk-type-300 uitk-type-medium uitk-text-positive-theme']")
     List<WebElement> flightStopList;
 
     List<Integer> beforePrices = new ArrayList<>();
@@ -112,6 +112,7 @@ public class WebFlightListingPage extends WebBasePage implements FlightListingPa
                 return false;
             }
         }
+        takeScreenshot("WebFlightsSelected");
         return true;
     }
 

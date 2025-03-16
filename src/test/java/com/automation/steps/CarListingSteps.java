@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class CarListingSteps extends BaseSteps {
+
     @Then("verify user is on car listing page")
     public void verifyUserIsOnCarListingPage() {
         Assert.assertTrue(carListingPage.isCarListingPageDisplayed());
@@ -16,7 +17,7 @@ public class CarListingSteps extends BaseSteps {
         carListingPage.clickOnFirstCar();
     }
 
-    @Then("print car rental details")
+    @And("print car rental details")
     public void printCarRentalDetails() {
         carListingPage.printLocationDetails();
         carListingPage.printCarDetails();
@@ -29,7 +30,7 @@ public class CarListingSteps extends BaseSteps {
     }
 
     @When("user selects the number of passengers {string}")
-    public void userSelectsTheNumberOfPassengers(String arg0) {
+    public void userSelectsTheNumberOfPassengers(String noOfPassengers) {
         carListingPage.clickOnPassengersBox();
     }
 

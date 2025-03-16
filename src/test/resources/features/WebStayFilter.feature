@@ -1,4 +1,4 @@
-@android @web
+@web
 Feature: Validate Filter Functionality In Stay Booking
 
   Background:  Verify user can book stays

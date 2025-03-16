@@ -9,7 +9,7 @@ import io.restassured.RestAssured;
 
 public class Hooks {
     @Before("@android or @web")
-    public void setUp(Scenario scenario) {
+    public void setUp() {
         ConfigReader.initReader();
         DriverManager.createDriver();
     }
@@ -23,8 +23,9 @@ public class Hooks {
     }
 
 
-    // @After
+     @After
     public void cleanUp(Scenario scenario) {
+        scenario.attach(DriverManager.takeScreenshotasBytes(),"image/png", scenario.getName());
         DriverManager.getDriver().quit();
     }
 }

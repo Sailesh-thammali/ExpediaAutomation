@@ -7,33 +7,36 @@ import org.openqa.selenium.support.FindBy;
 
 public class AndroidStaySearchPage extends AndroidBasePage implements StaySearchPage {
 
-
-    @FindBy(xpath = "//android.widget.EditText[@resource-id=\"SearchLocationInput\"]")
+    @FindBy(xpath = "//android.widget.EditText[@resource-id='SearchLocationInput']")
     WebElement enterCityInput;
-    @FindBy(xpath = "(//android.view.View[@resource-id=\"EGDSActionListItem\"])[1]/android.widget.Button")
+
+    @FindBy(xpath = "(//android.view.View[@resource-id='EGDSActionListItem'])[1]/android.widget.Button")
     WebElement selectCity;
-    @FindBy(xpath = "//android.view.View[@resource-id=\"SearchFormDataPickerField\"]")
+
+    @FindBy(xpath = "//android.view.View[@resource-id='SearchFormDataPickerField']")
     WebElement dateButton;
-    @FindBy(xpath = "(//android.view.View[@resource-id=\"Month\"])[1]//android.widget.TextView")
+
+    @FindBy(xpath = "(//android.view.View[@resource-id='Month'])[1]//android.widget.TextView")
     WebElement monthAndYear;
 
-    String XPATH_DATE_VALUE = "(//android.view.View[@resource-id=\"Day\"])[%s]/android.widget.Button";
+    String XPATH_DATE_VALUE = "(//android.view.View[@resource-id='Day'])[%s]/android.widget.Button";
 
-    @FindBy(xpath = "(//android.view.View[@resource-id=\"Month\"])")
+    @FindBy(xpath = "(//android.view.View[@resource-id='Month'])")
     WebElement calendar;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"DateSelector_FullCentralSheet_Button\"]/android.widget.Button")
+    @FindBy(xpath = "//android.view.View[@resource-id='DateSelector_FullCentralSheet_Button']/android.widget.Button")
     WebElement calenderDone;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"TravelerSelectorField\"]")
+    @FindBy(xpath = "//android.view.View[@resource-id='TravelerSelectorField']")
     WebElement travellersButton;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"stepInputIncreaseButton\"]")
+    @FindBy(xpath = "//android.view.View[@resource-id='stepInputIncreaseButton']")
     WebElement adutlsButton;
-    @FindBy(xpath = "//android.view.View[@resource-id=\"TravelerSelectorRoomDoneButton\"]/android.widget.Button")
+
+    @FindBy(xpath = "//android.view.View[@resource-id='TravelerSelectorRoomDoneButton']/android.widget.Button")
     WebElement travellerDone;
 
-    @FindBy(xpath = "//android.view.View[@resource-id=\"SearchButton\"]/android.widget.Button")
+    @FindBy(xpath = "//android.view.View[@resource-id='SearchButton']/android.widget.Button")
     WebElement searchBtn;
 
     @Override
@@ -96,8 +99,4 @@ public class AndroidStaySearchPage extends AndroidBasePage implements StaySearch
         return searchBtn.isDisplayed();
     }
 
-    @Override
-    public boolean isCarReviewPageDisplayed() {
-        return false;
-    }
 }

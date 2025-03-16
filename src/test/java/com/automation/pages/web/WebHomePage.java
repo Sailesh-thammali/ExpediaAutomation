@@ -48,7 +48,6 @@ public class WebHomePage extends WebBasePage implements HomePage {
     }
 
     public void clickOnSignInButton() {
-        // signInElement.click();
         signInButton.click();
     }
 
@@ -110,6 +109,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
     }
 
     public boolean isSelectedLanguageDisplayed(String language) {
+        takeScreenshot("WebLanguageChange");
         return regionButton.getText().equals(language);
     }
 }

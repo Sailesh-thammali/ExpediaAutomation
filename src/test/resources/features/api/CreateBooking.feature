@@ -8,4 +8,3 @@ Feature: Validate Create Booking End Point
     When user performs post call
     Then verify status code is 200
     And verify response body has a field "booking.firstname" is "John"
-

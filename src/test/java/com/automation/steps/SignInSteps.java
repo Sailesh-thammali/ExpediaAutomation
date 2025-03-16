@@ -1,7 +1,5 @@
 package com.automation.steps;
 
-import com.automation.pages.web.WebBasePage;
-import com.automation.pages.web.WebSignInPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -9,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class SignInSteps extends BaseSteps {
+
     @Then("verify user is on sign in page")
     public void verifyUserIsOnSignInPage() {
         Assert.assertTrue(signInPage.isSignInPageDisplayed());
@@ -22,7 +21,6 @@ public class SignInSteps extends BaseSteps {
 
     @When("user enter {string}")
     public void userEnter(String email) {
-
         signInPage.enterEmail(email);
     }
 

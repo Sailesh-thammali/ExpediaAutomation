@@ -24,7 +24,8 @@ public class FlightListingSteps extends BaseSteps {
 
     @Then("verify user can get prices in high to low")
     public void verifyUserCanGetPricesInHighToLow() {
-        Assert.assertTrue(flightListingPage.isPriceHighToLow());
+        Assert.assertTrue("Successfully sorted prices high to low",flightListingPage.isPriceHighToLow());
+
     }
 
     @When("user clicks on price low to high")
@@ -34,7 +35,7 @@ public class FlightListingSteps extends BaseSteps {
 
     @Then("verify user can get prices in low to high")
     public void verifyUserCanGetPricesInLowToHigh() {
-        Assert.assertTrue(flightListingPage.isPriceLowToHigh());
+        Assert.assertTrue("Successfully sorted prices low to high",flightListingPage.isPriceLowToHigh());
     }
 
     @When("user selects the flight company {string}")
@@ -50,7 +51,7 @@ public class FlightListingSteps extends BaseSteps {
     }
 
     @When("user selects the flight stops {string}")
-    public void userSelectsTheFlightStops(String arg0) {
+    public void userSelectsTheFlightStops(String noOfStops) {
         flightListingPage.clickOnDirectFilter();
 
     }

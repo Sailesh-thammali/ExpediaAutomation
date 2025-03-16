@@ -18,7 +18,8 @@ public interface HomePage {
 
     void clickOnFlightsOption();
 
-    void clickOnCarsOption();
+    default void clickOnCarsOption() {
+    }
 
     void clickOnStaysOption();
 
@@ -28,9 +29,13 @@ public interface HomePage {
 
     void selectRegionOption(String region);
 
-    void selectLanguageOption(String language);
+    default void selectLanguageOption(String language) {
 
-    void clickOnSaveButton();
+    }
+
+    default void clickOnSaveButton() {
+
+    }
 
     boolean isSelectedLanguageDisplayed(String language);
 
