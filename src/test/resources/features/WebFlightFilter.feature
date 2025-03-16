@@ -1,5 +1,5 @@
 @android @web
-Feature:Validate on filter functionality on flight details
+Feature:Validate Filter Functionality In Flights
 
   Background:
     Given user open application

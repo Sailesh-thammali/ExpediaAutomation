@@ -1,5 +1,5 @@
 @android @web
-Feature:Validate on sort by functionality
+Feature:Validate Sorting Functionality In Flights
 
   Background:
     Given user open application

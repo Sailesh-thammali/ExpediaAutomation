@@ -1,5 +1,5 @@
 @android @web
-Feature: Validate Car Rental Functionality
+Feature: Validate Car Rental Sort And Filter Functionality
 
   Background: : Verify user can rent cars
     Given user open application

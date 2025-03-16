@@ -1,5 +1,6 @@
 @android @web
 Feature: Validate Car Rental Functionality
+
   Scenario: Verify user can rent cars
     Given user open application
     Then verify user is on home page
@@ -10,4 +11,4 @@ Feature: Validate Car Rental Functionality
     Then verify user is on car listing page
     When user click on first car
     Then verify user is on car review page
-    Then print car rental details
+    And print car rental details
